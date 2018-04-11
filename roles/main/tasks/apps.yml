@@ -60,6 +60,6 @@
     - projects.json
     - snippets
 
-- name: open terminal Light theme
-  shell: "{{general.local_home}}/Projects/ansible-dotfiles/files/terminal/Snazzy.terminal"
+- name: open terminal Snazzy theme
+  shell: "open {{general.local_home}}/Projects/ansible-dotfiles/files/terminal/Snazzy.terminal"
 
