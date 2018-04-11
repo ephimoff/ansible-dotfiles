@@ -39,8 +39,7 @@ cask_apps:
   - virtualbox-extension-pack
   - visual-studio-code
 
-- name: Cleanup Brew packages
-  command: brew cleanup
+
 # downloads:
 #    zwift:
 #      name: Zwift
