@@ -6,7 +6,7 @@
     state: link
     force: yes
   with_fileglob:
-  - "{{general.local_home}}/Projects/ansible-dotfiles/dotfiles/*"
+    - "{{general.local_home}}/Projects/ansible-dotfiles/dotfiles/*"
   # with_items:
   #   - .aliases
   #   - .functions
