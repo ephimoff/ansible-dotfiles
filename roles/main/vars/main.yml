@@ -17,7 +17,6 @@ brew_apps:
   - shellcheck
   - tldr
   - vim
-    install_options: "--with-custom-python"
   - zsh
 
 # homebrew cask applications
