@@ -1,21 +1,28 @@
 - name: Ensure that Karabiner directory exists
   file:
-    path: "{{general.local_home}}/.config"
+    path: "{{general.local_home}}/.config/karabiner"
     state: directory
     mode: 0755
 
 - name: symlink Karabiner-Elements prefs
   file:
     src: "{{general.local_home}}/Projects/ansible-dotfiles/files/karabiner/karabiner"
-    dest: "{{general.local_home}}/.config"
+    dest: "{{general.local_home}}/.config/karabiner"
     state: link
     force: yes
+
+- name: Ensure that Spectacle directory exists
+  file:
+    path: "{{general.local_home}}/Library/Application\ Support/Spectacle"
+    state: directory
+    mode: 0755
 
 - name: symlink Spectacle prefs
   file:
     src: "{{general.local_home}}/Projects/ansible-dotfiles/files/spectacle/Shortcuts.json"
     dest: "{{general.local_home}}/Library/Application\ Support/Spectacle/Shortcuts.json"
     state: link
+    force: yes
 
 # - name: symlink VS Code prefs
 #   file:

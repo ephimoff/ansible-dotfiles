@@ -8,6 +8,7 @@
     - ~/Projects/eclipse_workspace
     - ~/tmp
     - ~/.dotfiles_backup
+    - ~/.config
 
 # - name: application installs
 #   include: homebrew.yml
