@@ -36,11 +36,14 @@
 # - name: install zsh
 #   include: zsh.yml
 
-- name: apply application preferences
-  include: apps.yml
+# - name: apply application preferences
+#   include: apps.yml
 
-- name: apply system preferences
-  include: system.yml
+- name: apply dotfiles
+  include: dotfiles.yml
+
+# - name: apply system preferences
+#   include: system.yml
 
 # - name: Backup current dotfiles
 #   copy:
