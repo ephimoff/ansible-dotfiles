@@ -1,26 +1,26 @@
 - name: symlink dotfiles
   file:
-    # src: "{{general.local_home}}/Projects/ansible-dotfiles/dotfiles/{{ item }}"
-    src: "{{ item }}"
+    src: "{{general.local_home}}/Projects/ansible-dotfiles/dotfiles/{{ item }}"
+    # src: "{{ item }}"
     dest: "{{general.local_home}}/{{ item }}"
     state: link
     force: yes
-  with_fileglob:
-    - "{{general.local_home}}/Projects/ansible-dotfiles/dotfiles/*"
-  # with_items:
-  #   - .aliases
-  #   - .functions
-  #   - .gemrc
-  #   - .gitconfig
-  #   - .gitconfig.local
-  #   - .gitignore_global
-  #   - .gitmessage
-  #   - .hushlogin
-  #   - .inputrc
-  #   - .mdlrc
-  #   - .mdlrc.style.rb
-  #   - .path
-  #   - .textlintrc
-  #   - .vimrc
-  #   - .zshrc
+  # with_fileglob:
+  #   - "{{general.local_home}}/Projects/ansible-dotfiles/dotfiles/*"
+  with_items:
+    - .aliases
+    - .functions
+    - .gemrc
+    - .gitconfig
+    - .gitconfig.local
+    - .gitignore_global
+    - .gitmessage
+    - .hushlogin
+    - .inputrc
+    - .mdlrc
+    - .mdlrc.style.rb
+    - .path
+    - .textlintrc
+    - .vimrc
+    - .zshrc
 
