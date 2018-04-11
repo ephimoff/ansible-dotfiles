@@ -9,24 +9,26 @@
     - ~/tmp
     - ~/.dotfiles_backup
 
+- name: application installs
+  include: homebrew.yml
+
 - name: install brew apps
   homebrew:
     name: "{{ item }}"
     state: latest
-  with_items:
-    - bash
-    - bash-completion
-    - git
-    - jq
-    - node
-    - pyenv
-    - rbenv
-    - rbenv ruby-build
-    - rbenv-bundler
-    - shellcheck
-    - tldr
-    - vim --with-custom-python
-    - zsh
+  with_items: "{{ brew_apps }}"
+
+- name: install cask apps
+  homebrew_cask:
+    name: "{{ item }}"
+    state: installed
+  with_items: "{{ cask_apps }}"
+
+- name: setting up zsh with oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: "{{general.local_home}}/.oh-my-zsh"
+
 
 # - name: Backup current dotfiles
 #   copy:

@@ -1,0 +1,50 @@
+---
+# list of applications to install
+general:
+  local_home: "{{ lookup('env','HOME') }}"
+
+# homebrew applications
+brew_apps:
+  - bash
+  - bash-completion
+  - git
+  - jq
+  - node
+  - pyenv
+  - rbenv
+  - ruby-build
+  - rbenv-bundler
+  - shellcheck
+  - tldr
+  - vim --with-custom-python
+  - zsh
+
+# homebrew cask applications
+cask_apps:
+  - bettertouchtool
+  - dropbox
+  - eclipse-ide
+  - eclipse-java
+  - firefox
+  - font-fira-code
+  - font-source-code-pro
+  - google-chrome
+  - highsierramediakeyenabler # disable annoying behaviour of media keys for Safari 
+  - intellij-idea-ce
+  - java
+  - karabiner-elements
+  - qlstephen # Preview plain text files without or with unknown file extension. Example: README, CHANGELOG, index.styl, etc.
+  - skype
+  - virtualbox
+  - virtualbox-extension-pack
+  - visual-studio-code
+
+downloads:
+   zwift:
+     name: Zwift
+     url: http://cdn.zwift.com/app/ZwiftOSX.dmg
+     dest: "{{general.local_home}}/Downloads/ZwiftOSX.dmg"
+   suuntolink:
+     name: Suunto Movescount link
+     url: http://suuntolink.static.movescount.com/Suuntolink_installer.dmg
+     dest: "{{general.local_home}}/Downloads/Suuntolink_installer.dmg"
