@@ -28,13 +28,13 @@
 # - name: cleanup brew packages
 #   command: brew cleanup
 
-- name: setting up zsh with oh-my-zsh
-  git:
-    repo: https://github.com/robbyrussell/oh-my-zsh.git
-    dest: "{{general.local_home}}/.oh-my-zsh"
+# - name: setting up zsh with oh-my-zsh
+#   git:
+#     repo: https://github.com/robbyrussell/oh-my-zsh.git
+#     dest: "{{general.local_home}}/.oh-my-zsh"
 
-- name: install zsh
-  include: zsh.yml
+# - name: install zsh
+#   include: zsh.yml
 
 - name: apply application preferences
   include: apps.yml

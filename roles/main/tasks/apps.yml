@@ -1,8 +1,8 @@
-- name: Ensure that Karabiner directory exists
-  file:
-    path: "{{general.local_home}}/.config/karabiner"
-    state: directory
-    mode: 0755
+# - name: Ensure that Karabiner directory exists
+#   file:
+#     path: "{{general.local_home}}/.config/karabiner"
+#     state: directory
+#     mode: 0755
 
 - name: symlink Karabiner-Elements prefs
   file:
