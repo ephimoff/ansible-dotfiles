@@ -88,11 +88,11 @@
 - name: 'Screen: Disable shadow in screenshots'
   shell: defaults write com.apple.screencapture disable-shadow -bool true
 
-# - name: 'Terminal: Make Snazzy theme the default one'
-#   shell: defaults write com.apple.Terminal 'Default Window Settings' -string Snazzy && defaults write com.apple.Terminal 'Startup Window Settings' -string Snazzy
+- name: 'Terminal: Make Snazzy theme the default one'
+  shell: defaults write com.apple.Terminal 'Default Window Settings' -string Snazzy && defaults write com.apple.Terminal 'Startup Window Settings' -string Snazzy
 
-# - name: 'Terminal: Disable the annoying line marks'
-#   shell: defaults write com.apple.Terminal ShowLineMarks -int 0
+- name: 'Terminal: Disable the annoying line marks'
+  shell: defaults write com.apple.Terminal ShowLineMarks -int 0
 
 
 - name: 'Calendar: Start week on Monday'

@@ -30,6 +30,22 @@
     state: directory
     mode: 0755
 
+- name: install VS Code extensions
+  shell: "code --install-extension {{ item }}"
+  with_items:
+  - Alan.stylus
+  - AlanWalk.markdown-toc
+  - DavidAnson.vscode-markdownlint
+  - PKief.material-icon-theme
+  - alefragnani.project-manager
+  - annsk.alignment
+  - casian.plsql
+  - dbaeumer.jshint
+  - eamodio.gitlens
+  - emilast.LogFileHighlighter
+  - timonwong.shellcheck
+  - tonsky.theme-alabaster
+
 - name: symlink VS Code prefs
   file:
     # src: "{{general.local_home}}/Projects/ansible-dotfiles/files/vscode/{{ item.path }}"
@@ -42,16 +58,8 @@
     - settings.json
     - keybindings.json
     - projects.json
-    # - snippets
+    - snippets
 
-
-
-# - name: symlink VS Code prefs
-#   file:
-#     src: "files/vscode/{{ item.path }}"
-#     dest: "{{general.local_home}}/{{ item.dest }}"
-#     state: link
-#   with_items:
-#   - { path: 'settings.json', dest: 'new' }
-#   - { path: 'vmdev', dest: 'vmdev' }
+- name: open terminal Light theme
+  shell: "{{general.local_home}}/Projects/ansible-dotfiles/files/terminal/Snazzy.terminal"
 
