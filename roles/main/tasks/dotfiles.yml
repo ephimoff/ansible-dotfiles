@@ -1,7 +1,7 @@
 - name: symlink dotfiles
   file:
     # src: "{{general.local_home}}/Projects/ansible-dotfiles/dotfiles/{{ item }}"
-    src: 
+    src: "{{ item }}"
     dest: "{{general.local_home}}/{{ item }}"
     state: link
     force: yes
