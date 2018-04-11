@@ -1,6 +1,22 @@
-- name: symlink Karabiner prefs
+- name: symlink Karabiner-Elements prefs
   file:
-    src: files/karabiner/karabiner/
+    src: "{{general.local_home}}/ansible-dotfiles/files/karabiner/karabiner/"
     dest: "{{general.local_home}}/.config/"
     state: link
     # force: yes
+
+- name: symlink Spectacle prefs
+  file:
+    src: "{{general.local_home}}/ansible-dotfiles/files/spectacle/Shortcuts.json"
+    dest: "{{general.local_home}}/Library/Application\ Support/Spectacle/Shortcuts.json"
+    state: link
+
+# - name: symlink VS Code prefs
+#   file:
+#     src: "files/vscode/{{ item.path }}"
+#     dest: "{{general.local_home}}/{{ item.dest }}"
+#     state: link
+#   with_items:
+#   - { path: 'settings.json', dest: 'new' }
+#   - { path: 'vmdev', dest: 'vmdev' }
+
