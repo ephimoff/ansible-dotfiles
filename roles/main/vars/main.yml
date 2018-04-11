@@ -17,6 +17,7 @@ brew_apps:
   - shellcheck
   - tldr
   - vim
+    install_options: "--with-custom-python"
   - zsh
 
 # homebrew cask applications
@@ -39,6 +40,8 @@ cask_apps:
   - virtualbox-extension-pack
   - visual-studio-code
 
+- name: Cleanup Brew packages
+  command: brew cleanup
 # downloads:
 #    zwift:
 #      name: Zwift

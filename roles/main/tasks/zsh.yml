@@ -1,0 +1,9 @@
+---
+# doing configuration
+- name: setting up zsh with oh-my-zsh
+  shell: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"' 
+
+- name: getting powerlevel9k theme for oh-my-zsh
+  git:
+    repo: https://github.com/bhilburn/powerlevel9k.git 
+    dest: "{{general.local_home}}/.oh-my-zsh/custom/themes/powerlevel9k"
