@@ -30,6 +30,11 @@
     repo: https://github.com/robbyrussell/oh-my-zsh.git
     dest: "{{general.local_home}}/.oh-my-zsh"
 
+- name: install zsh
+  include: zsh.yml
+
+- name: apply system preferences
+  include: system.yml
 
 # - name: Backup current dotfiles
 #   copy:
