@@ -65,9 +65,70 @@
   shell: defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 - name: 'Safari: Enable Safari’s debug menu'
-  shell: defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+  # shell: defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+  osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeInternalDebugMenu
+    type: bool
+    value: true
+    state: present
 
 - name: 'Safari: Stop Safari sending searches to Apple'
   shell: defaults write com.apple.Safari UniversalSearchEnabled -bool false
 
+- name: 'Screen: Require password immediately after sleep or screen saver begins'
+  shell: defaults write com.apple.screensaver askForPassword -int 1 && defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+- name: 'Screen: Save screenshots to the Pictures directory'
+  shell: defaults write com.apple.screencapture location -string "{{general.local_home}}/Pictures"
+
+- name: 'Screen: Save screenshots in PNG format'
+  shell: defaults write com.apple.screencapture type -string "png"
+
+- name: 'Screen: Disable shadow in screenshots'
+  shell: defaults write com.apple.screencapture disable-shadow -bool true
+
+# - name: 'Terminal: Make Snazzy theme the default one'
+#   shell: defaults write com.apple.Terminal 'Default Window Settings' -string Snazzy && defaults write com.apple.Terminal 'Startup Window Settings' -string Snazzy
+
+# - name: 'Terminal: Disable the annoying line marks'
+#   shell: defaults write com.apple.Terminal ShowLineMarks -int 0
+
+
+- name: 'Calendar: Start week on Monday'
+  shell: defaults write com.apple.ical "first day of the week" 1
+
+- name: 'Prevent Photos from opening automatically when devices are plugged in'
+  shell: defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+- name: 'Enable the firewall'
+  shell: sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+- name: 'Enable stealth mode'
+  shell: sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
+- name: 'Top right screen corner → Put display to sleep'
+  shell: defaults write com.apple.dock wvous-tr-corner -int 5 && defaults write com.apple.dock wvous-tr-modifier -int 0
+
+# Hot corners:
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+
+- name: 'TexEdit: Use plain text mode for new TextEdit documents'
+  shell: defaults write com.apple.TextEdit RichText -int 0
+
+- name: 'TexEdit: Open and save files as UTF-8 in TextEdit'
+  shell: defaults write com.apple.TextEdit PlainTextEncoding -int 4 && defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+
+- name: 'Messages: Disable continuous spell checking'
+  shell: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 

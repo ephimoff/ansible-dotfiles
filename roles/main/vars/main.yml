@@ -22,19 +22,26 @@ brew_apps:
 # homebrew cask applications
 cask_apps:
   - bettertouchtool
+  - caffeine                  # http://lightheadsw.com/caffeine/
   - dropbox
   - eclipse-ide
   - eclipse-java
   - firefox
+  - flycut                    # https://github.com/TermiT/Flycut/
   - font-fira-code
   - font-source-code-pro
   - google-chrome
+  - grammarly                 # https://www.grammarly.com
   - highsierramediakeyenabler # disable annoying behaviour of media keys for Safari 
   - intellij-idea-ce
   - java
   - karabiner-elements
-  - qlstephen # Preview plain text files without or with unknown file extension. Example: README, CHANGELOG, index.styl, etc.
+  - notion                    # https://www.notion.so
+  - numi                      # http://numi.io
+  - punto-switcher            # https://yandex.ru/soft/punto/
+  - qlstephen                 # Preview plain text files without or with unknown file extension. Example: README, CHANGELOG, index.styl, etc.
   - skype
+  - spectacle                 # https://www.spectacleapp.com
   - virtualbox
   - virtualbox-extension-pack
   - visual-studio-code

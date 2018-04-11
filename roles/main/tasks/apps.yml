@@ -1,0 +1,6 @@
+- name: symlink Karabiner prefs
+  file:
+    src: files/karabiner/karabiner/
+    dest: "{{general.local_home}}/.config/"
+    state: link
+    # force: yes

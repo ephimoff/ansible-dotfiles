@@ -7,3 +7,6 @@
   git:
     repo: https://github.com/bhilburn/powerlevel9k.git 
     dest: "{{general.local_home}}/.oh-my-zsh/custom/themes/powerlevel9k"
+
+- name: making zsh default shell
+  shell: chsh -s /bin/zsh 
