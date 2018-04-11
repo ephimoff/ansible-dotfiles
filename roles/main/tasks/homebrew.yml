@@ -11,6 +11,14 @@
     state: latest
     update_homebrew: yes
 
+- name: tap homebrew caskroom/versions
+  homebrew_tap:
+    tap: "caskroom/versions"
+
+- name: tap homebrew caskroom/fonts
+  homebrew_tap:
+    tap: "caskroom/fonts"
+
 - name: tap homebrew caskroom/cask
   homebrew_tap:
     tap: "caskroom/cask"

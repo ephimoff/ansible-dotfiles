@@ -65,11 +65,11 @@ ssh-add -A 2>/dev/null;
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # shellcheck disable=SC1090
-source "$HOME/Projects/dotfiles/dotfiles/.aliases"
+source "$HOME/Projects/ansible-dotfiles/dotfiles/.aliases"
 
 # Load functions
 # shellcheck disable=SC1090
-source "$HOME/Projects/dotfiles/dotfiles/.functions"
+source "$HOME/Projects/ansible-dotfiles/dotfiles/.functions"
 
 # To retain the / added after completing directories or symbolic links to directories
 setopt no_auto_remove_slash
