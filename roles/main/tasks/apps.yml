@@ -6,14 +6,14 @@
 
 - name: symlink Karabiner-Elements prefs
   file:
-    src: "files/karabiner/karabiner"
+    src: "{{general.local_home}}/Projects/ansible-dotfiles/files/karabiner/karabiner"
     dest: "{{general.local_home}}/.config"
     state: link
     force: yes
 
 - name: symlink Spectacle prefs
   file:
-    src: "{{general.local_home}}/ansible-dotfiles/files/spectacle/Shortcuts.json"
+    src: "{{general.local_home}}/Projects/ansible-dotfiles/files/spectacle/Shortcuts.json"
     dest: "{{general.local_home}}/Library/Application\ Support/Spectacle/Shortcuts.json"
     state: link
 
