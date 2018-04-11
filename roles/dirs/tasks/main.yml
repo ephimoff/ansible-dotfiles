@@ -11,7 +11,7 @@
 
 - name: install brew apps
   homebrew:
-    name: {{ item }}
+    name: "{{ item }}"
     state: latest
   with_items:
     - bash
