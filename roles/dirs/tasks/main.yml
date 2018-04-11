@@ -14,7 +14,7 @@
     src: "{{ item }}"
     dest: ~/.dotfiles_backup
   with_fileglob:
-    - ~/Projects/dotfiles/dotfiles/*
+    - ~/Projects/ansible-dotfiles/resources/dotfiles/* # might need to change it later with a var
 
 - name: Symlink dotfiles from repo to user's dotfiles
   file:
@@ -23,4 +23,4 @@
     state: link
     force: yes
   with_fileglob:
-    - ~/Projects/dotfiles/dotfiles/*
+    - ~/Projects/ansible-dotfiles/resources/dotfiles/* # might need to change it later with a var
