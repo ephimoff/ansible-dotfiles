@@ -9,18 +9,37 @@
     - ~/tmp
     - ~/.dotfiles_backup
 
-- name: Backup current dotfiles
-  copy:
-    src: "{{ item }}"
-    dest: ~/.dotfiles_backup
-  with_fileglob:
-    - ~/Projects/ansible-dotfiles/resources/dotfiles/* # might need to change it later with a var
+- name: install brew apps
+  homebrew:
+    name: {{ item }}
+    state: latest
+  with_items:
+    - bash
+    - bash-completion
+    - git
+    - jq
+    - node
+    - pyenv
+    - rbenv
+    - rbenv ruby-build
+    - rbenv-bundler
+    - shellcheck
+    - tldr
+    - vim --with-custom-python
+    - zsh
 
-- name: Symlink dotfiles from repo to user's dotfiles
-  file:
-    src: "{{ item }}"
-    dest: $HOME/{{ item }}
-    state: link
-    force: yes
-  with_fileglob:
-    - ~/Projects/ansible-dotfiles/resources/dotfiles/* # might need to change it later with a var
+# - name: Backup current dotfiles
+#   copy:
+#     src: "{{ item }}"
+#     dest: ~/.dotfiles_backup
+#   with_fileglob:
+#     - "~/Projects/ansible-dotfiles/resources/dotfiles/*" # might need to change it later with a var
+
+# - name: Symlink dotfiles from repo to user's dotfiles
+#   file:
+#     src: "{{ item }}"
+#     dest: $HOME/{{ item }}
+#     state: link
+#     force: yes
+#   with_fileglob:
+#     - "~/Projects/ansible-dotfiles/resources/dotfiles/*" # might need to change it later with a var
