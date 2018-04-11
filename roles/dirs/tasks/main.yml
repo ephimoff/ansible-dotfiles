@@ -1,0 +1,26 @@
+- name: Create useful directories if they don't exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+  with_items:
+    - ~/Downloads/.transmission/incomplete
+    - ~/Projects/eclipse_workspace
+    - ~/tmp
+    - ~/.dotfiles_backup
+
+- name: Backup current dotfiles
+  copy:
+    src: "{{ item }}"
+    dest: ~/.dotfiles_backup
+  with_fileglob:
+    - ~/Projects/dotfiles/dotfiles/*
+
+- name: Symlink dotfiles from repo to user's dotfiles
+  file:
+    src: "{{ item }}"
+    dest: $HOME/{{ item }}
+    state: link
+    force: yes
+  with_fileglob:
+    - ~/Projects/dotfiles/dotfiles/*

@@ -1,0 +1,15 @@
+---
+- name: set up a mac
+  hosts: localhost
+
+  roles:
+    - dirs 
+    # - dotfiles
+    # - templates
+    # - macos
+    # - brew
+    # - cask
+    # - mas
+    # - additional_apps
+    # - preferences
+    # - oh_my_zsh
