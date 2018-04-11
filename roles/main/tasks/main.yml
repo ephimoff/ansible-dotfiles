@@ -9,8 +9,8 @@
     - ~/tmp
     - ~/.dotfiles_backup
 
-- name: application installs
-  include: homebrew.yml
+# - name: application installs
+#   include: homebrew.yml
 
 # - name: install brew apps
 #   homebrew:

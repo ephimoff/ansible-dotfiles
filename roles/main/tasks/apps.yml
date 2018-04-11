@@ -1,13 +1,13 @@
 - name: Ensure that Karabiner directory exists
   file:
-    path: "{{general.local_home}}/.config/"
+    path: "{{general.local_home}}/.config"
     state: directory
     mode: 0755
 
 - name: symlink Karabiner-Elements prefs
   file:
-    src: "files/karabiner/karabiner/"
-    dest: "{{general.local_home}}/.config/"
+    src: "files/karabiner/karabiner"
+    dest: "{{general.local_home}}/.config"
     state: link
     force: yes
 
