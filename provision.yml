@@ -1,6 +1,7 @@
 ---
 - name: set up a mac
   hosts: localhost
+  connection: local
 
   roles:
     - dirs 
