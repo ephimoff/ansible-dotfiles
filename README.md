@@ -10,6 +10,7 @@
     - a manual step to enable right font in terminal
 - rewrite system with defaults module
 - maybe restructure code a little bit better
+- symlink scripts folder - optional (`ln -s ~/Projects/scripts ~/.scripts`)
 
 ## Notes
 

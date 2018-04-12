@@ -9,7 +9,8 @@
 
 - name: install ruby versions
   command: "rbenv install {{ item }}"
-  when: rbenv_installed_ruby_versions.stdout.find("{{ item }}") == -1
+  # when: rbenv_installed_ruby_versions.stdout.find("{{ item }}") == -1
+  when: rbenv_installed_ruby_versions.stdout.find(item) == -1
   with_items: 
     - 2.0.0-p598
     - 2.2.0
@@ -23,7 +24,8 @@
   vars: 
     rbenv_default_ruby_version: 2.2.0
   command: "rbenv global {{ rbenv_default_ruby_version }}"
-  when: rbenv_installed_default_ruby_version.stdout.find("{{ rbenv_default_ruby_version }}") == -1
+  # when: rbenv_installed_default_ruby_version.stdout.find("{{ rbenv_default_ruby_version }}") == -1
+  when: rbenv_installed_default_ruby_version.stdout.find(rbenv_default_ruby_version) == -1
 
 # - name: install ruby versions
 #   shell: "rbenv install {{ item }}"

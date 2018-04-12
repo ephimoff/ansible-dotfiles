@@ -43,11 +43,11 @@
 - name: apply application preferences
   include: apps.yml
 
-- name: apply dotfiles
-  include: dotfiles.yml
-
 - name: install vim plugins
   include: vim.yml
+
+- name: symlink dotfiles
+  include: dotfiles.yml
 
 - name: apply system preferences
   include: system.yml

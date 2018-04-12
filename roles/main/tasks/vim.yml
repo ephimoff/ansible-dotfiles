@@ -4,5 +4,5 @@
     repo: https://github.com/VundleVim/Vundle.vim.git
     dest: "{{general.local_home}}/.vim/bundle/Vundle.vim"
 
-- name: install vim plugins
-  shell: vim -e -c PluginInstall -c quitall 2> /dev/null
+# - name: install vim plugins
+#   shell: vim -e -c PluginInstall -c quitall 2> /dev/null
