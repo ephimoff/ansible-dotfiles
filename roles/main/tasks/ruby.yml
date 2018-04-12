@@ -11,14 +11,15 @@
 - name: make 2.2 a global version
   shell: rbenv global 2.2.0
 
-
 - name: install gems
-  shell: rbenv exec gem install 
+  gem:
+    name: {{ item }}
+    state: present
   with_items:
     - bundler
-    - install mdl
-    - install rubocop
-    - install yaml-lint
+    - mdl
+    - rubocop
+    - yaml-lint
 
 - name: rehash rbenv
   shell: rbenv rehash
