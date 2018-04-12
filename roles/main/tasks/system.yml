@@ -1,11 +1,11 @@
 - name: set Finder settings
   osx_defaults:
-    domain: "{{ item.domain }}" # 
+    domain: "{{ item.domain }}" 
     key: "{{ item.key }}" 
     type: "{{ item.type }}" 
     value: "{{ item.value }}"
     state: present
-  with_ietms:
+  with_items:
     - { domain: 'com.apple.finder', key: '_FXSortFoldersFirst', type: 'bool', value: 'true' }
     - { domain: 'com.apple.finder', key: '_FXShowPosixPathInTitle', type: 'bool', value: 'true' }
     - { domain: 'com.apple.finder', key: 'ShowStatusBar', type: 'bool', value: 'true' }

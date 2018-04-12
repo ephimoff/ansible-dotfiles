@@ -96,17 +96,17 @@ dotfiles:
   - .vimrc
   - .zshrc
 
-  # ruby versions to install
-  ruby_versions:
-    - 2.0.0-p598
-    - 2.2.0
+# ruby versions to install
+ruby_versions:
+  - 2.0.0-p598
+  - 2.2.0
 
-  # ruby default version
-  default_ruby_version: 2.2.0
+# ruby default version
+default_ruby_version: 2.2.0
 
-  # ruby gems to install
-  ruby_gems:
-    - bundler
-    - mdl
-    - rubocop
-    - yaml-lint
+# ruby gems to install
+ruby_gems:
+  - bundler
+  - mdl
+  - rubocop
+  - yaml-lint
