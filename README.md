@@ -2,7 +2,6 @@
 
 ## TODO
 
-- ruby
 - vim
 - ssh
 - mas

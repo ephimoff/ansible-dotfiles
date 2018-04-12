@@ -9,6 +9,7 @@
     - ~/tmp
     - ~/.dotfiles_backup
     - ~/.config
+    - ~/.vim/bundle/
 
 - name: application installs
   include: homebrew.yml
@@ -44,6 +45,9 @@
 
 - name: apply dotfiles
   include: dotfiles.yml
+
+- name: install vim plugins
+  include: vim.yml
 
 - name: apply system preferences
   include: system.yml
