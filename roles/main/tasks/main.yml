@@ -46,3 +46,6 @@
 
 - name: apply system preferences
   include: system.yml
+
+- name: install MAS apps
+  include: mas.yml

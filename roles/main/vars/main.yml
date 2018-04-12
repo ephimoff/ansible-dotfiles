@@ -9,6 +9,7 @@ brew_apps:
   - bash-completion
   - git
   - jq
+  - mas
   - node
   - pyenv
   - rbenv
@@ -113,5 +114,18 @@ ruby_gems:
 
 # system_preferences
 screenshots:
-  - location: "{{general.local_home}}/Pictures"
+  - location: ~/Pictures
   - format: "png"
+
+# mas settings
+mas_email: ""
+mas_password: ""
+# mas_installed_app_ids: [] # Deprecated
+mas_installed_apps:
+  - { id: 425424353, name: "The Unarchiver" }
+  - { id: 443987910, name: "1Password" }
+  - { id: 775737590, name: "iA Writer" }
+  - { id: 407963104, name: "Pixelmator" }
+  - { id: 497799835, name: "Xcode (8.1)" }
+mas_upgrade_all_apps: no
+mas_signin_dialog: no
