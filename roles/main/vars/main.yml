@@ -20,6 +20,12 @@ brew_apps:
   - yarn
   - zsh
 
+# casks to install
+casks:
+  - caskroom/cask
+  - caskroom/versions
+  - caskroom/fonts
+
 # homebrew cask applications
 cask_apps:
   - bettertouchtool
@@ -47,3 +53,60 @@ cask_apps:
   - virtualbox
   - virtualbox-extension-pack
   - visual-studio-code
+
+# folders to create
+folders:
+  - ~/Downloads/.transmission/incomplete
+  - ~/Projects/eclipse_workspace
+  - ~/tmp
+  - ~/.dotfiles_backup
+  - ~/.config
+  - ~/.vim/bundle/
+
+# vs code extensions to install
+extensions: 
+  - Alan.stylus
+  - AlanWalk.markdown-toc
+  - DavidAnson.vscode-markdownlint
+  - PKief.material-icon-theme
+  - alefragnani.project-manager
+  - annsk.alignment
+  - casian.plsql
+  - dbaeumer.jshint
+  - eamodio.gitlens
+  - emilast.LogFileHighlighter
+  - timonwong.shellcheck
+  - tonsky.theme-alabaster
+
+# list of dotfiles for symlinking
+dotfiles:
+  - .aliases
+  - .functions
+  - .gemrc
+  - .gitconfig
+  - .gitconfig.local
+  - .gitignore_global
+  - .gitmessage
+  - .hushlogin
+  - .inputrc
+  - .mdlrc
+  - .mdlrc.style.rb
+  - .path
+  - .textlintrc
+  - .vimrc
+  - .zshrc
+
+  # ruby versions to install
+  ruby_versions:
+    - 2.0.0-p598
+    - 2.2.0
+
+  # ruby default version
+  default_ruby_version: 2.2.0
+
+  # ruby gems to install
+  ruby_gems:
+    - bundler
+    - mdl
+    - rubocop
+    - yaml-lint

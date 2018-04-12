@@ -1,6 +1,6 @@
 ---
 - name: set up a mac
   hosts: local
-
+  gather_facts: false
   roles:
     - main 

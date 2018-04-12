@@ -4,20 +4,6 @@
     dest: "{{general.local_home}}/{{ item }}"
     state: link
     force: yes
-  with_items:
-    - .aliases
-    - .functions
-    - .gemrc
-    - .gitconfig
-    - .gitconfig.local
-    - .gitignore_global
-    - .gitmessage
-    - .hushlogin
-    - .inputrc
-    - .mdlrc
-    - .mdlrc.style.rb
-    - .path
-    - .textlintrc
-    - .vimrc
-    - .zshrc
+  with_items: "{{ dotfiles }}"
+
 

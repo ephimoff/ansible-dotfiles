@@ -32,19 +32,8 @@
 
 - name: install VS Code extensions
   shell: "code --install-extension {{ item }}"
-  with_items:
-  - Alan.stylus
-  - AlanWalk.markdown-toc
-  - DavidAnson.vscode-markdownlint
-  - PKief.material-icon-theme
-  - alefragnani.project-manager
-  - annsk.alignment
-  - casian.plsql
-  - dbaeumer.jshint
-  - eamodio.gitlens
-  - emilast.LogFileHighlighter
-  - timonwong.shellcheck
-  - tonsky.theme-alabaster
+  with_items: "{{ extensions }}"
+
 
 - name: symlink VS Code prefs
   file:

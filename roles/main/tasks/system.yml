@@ -1,23 +1,75 @@
-- name: 'Finder: keep folders on top when sorting by name'
-  shell: defaults write com.apple.finder _FXSortFoldersFirst -bool true
+- name: set Finder settings
+  osx_defaults:
+    domain: "{{ item.domain }}" # 
+    key: "{{ item.key }}" 
+    type: "{{ item.type }}" 
+    value: "{{ item.value }}"
+    state: present
+  with_ietms:
+    - { domain: 'com.apple.finder', key: '_FXSortFoldersFirst', type: 'bool', value: 'true' }
+    - { domain: 'com.apple.finder', key: '_FXShowPosixPathInTitle', type: 'bool', value: 'true' }
+    - { domain: 'com.apple.finder', key: 'ShowStatusBar', type: 'bool', value: 'true' }
+    - { domain: 'com.apple.finder', key: 'ShowPathbar', type: 'bool', value: 'true' }
+    - { domain: 'com.apple.finder', key: 'FXDefaultSearchScope', type: 'string', value: 'SCcf' }
+    - { domain: 'com.apple.finder', key: 'FXPreferredViewStyle', type: 'string', value: 'clmv' }
+    - { domain: 'NSGlobalDomain', key: 'AppleShowAllExtensions', type: 'bool', value: 'true' }
 
-- name: 'Finder: show full path in title'
-  shell: defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# - name: 'Finder: keep folders on top when sorting by name'
+#   # shell: defaults write com.apple.finder _FXSortFoldersFirst -bool true
+#   osx_defaults:
+#     domain: com.apple.finder
+#     key: _FXSortFoldersFirst
+#     type: bool
+#     value: true
+#     state: present
 
-- name: 'Finder: show status bar'
-  shell: defaults write com.apple.finder ShowStatusBar -bool true
+# - name: 'Finder: show full path in title'
+#   # shell: defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+#   domain: com.apple.finder
+#     key: _FXShowPosixPathInTitle
+#     type: bool
+#     value: true
+#     state: present
 
-- name: 'Finder: show path bar'
-  shell: defaults write com.apple.finder ShowPathbar -bool true
+# - name: 'Finder: show status bar'
+#   # shell: defaults write com.apple.finder ShowStatusBar -bool true
+#   domain: com.apple.finder
+#     key: ShowStatusBar
+#     type: bool
+#     value: true
+#     state: present
 
-- name: 'Finder: when performing a search, search the current folder by default'
-  shell: defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+# - name: 'Finder: show path bar'
+#   # shell: defaults write com.apple.finder ShowPathbar -bool true
+#   domain: com.apple.finder
+#     key: ShowPathbar
+#     type: bool
+#     value: true
+#     state: present
 
-- name: 'Finder: use column view in all Finder windows by default'
-  shell: defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+# - name: 'Finder: when performing a search, search the current folder by default'
+#   # shell: defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+#   domain: com.apple.finder
+#     key: FXDefaultSearchScope
+#     type: string
+#     value: SCcf
+#     state: present
 
-- name: 'Finder: show all filename extensions'
-  shell: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# - name: 'Finder: use column view in all Finder windows by default'
+#   # shell: defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+#   domain: com.apple.finder
+#     key: FXPreferredViewStyle
+#     type: string
+#     value: clmv
+#     state: present
+
+# - name: 'Finder: show all filename extensions'
+#   shell: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+#   domain: NSGlobalDomain
+#     key: AppleShowAllExtensions
+#     type: bool
+#     value: true
+#     state: present
 
 - name: 'Avoid creating .DS_Store files on network volumes'
   shell: defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true

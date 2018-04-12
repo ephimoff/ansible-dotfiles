@@ -8,4 +8,5 @@
     dest: "{{general.local_home}}/.oh-my-zsh/custom/themes/powerlevel9k"
 
 - name: making zsh default shell
-  shell: chsh -s /bin/zsh 
+  shell: chsh -s /bin/zsh
+  become: yes
