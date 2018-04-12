@@ -5,7 +5,6 @@
 - vim
 - ssh
 - mas
-- templates
 - travis
 - proper readme
     - a manual step to enable right font in terminal
