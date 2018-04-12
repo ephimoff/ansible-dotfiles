@@ -94,7 +94,6 @@
 - name: 'Terminal: Disable the annoying line marks'
   shell: defaults write com.apple.Terminal ShowLineMarks -int 0
 
-
 - name: 'Calendar: Start week on Monday'
   shell: defaults write com.apple.ical "first day of the week" 1
 

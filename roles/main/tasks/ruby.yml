@@ -1,0 +1,24 @@
+---
+- name: init rbenv
+  shell: eval "$(rbenv init -)"
+
+- name: install ruby versions
+  shell: rbenv install {{ item }}
+  with_items:
+    - 2.0.0-p598
+    - 2.2.0
+
+- name: make 2.2 a global version
+  shell: rbenv global 2.2.0
+
+
+- name: install gems
+  shell: rbenv exec gem install 
+  with_items:
+    - bundler
+    - install mdl
+    - install rubocop
+    - install yaml-lint
+
+- name: rehash rbenv
+  shell: rbenv rehash

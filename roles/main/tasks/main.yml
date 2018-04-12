@@ -28,35 +28,22 @@
 - name: cleanup brew packages
   command: brew cleanup
 
-# - name: setting up zsh with oh-my-zsh
-#   git:
-#     repo: https://github.com/robbyrussell/oh-my-zsh.git
-#     dest: "{{general.local_home}}/.oh-my-zsh"
+- name: setting up zsh with oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: "{{general.local_home}}/.oh-my-zsh"
 
-# - name: install zsh
-#   include: zsh.yml
+- name: install zsh
+  include: zsh.yml
 
-# - name: apply application preferences
-#   include: apps.yml
+- name: install versions of ruby with rbenv
+  include: ruby.yml
+
+- name: apply application preferences
+  include: apps.yml
 
 - name: apply dotfiles
   include: dotfiles.yml
 
-# - name: apply system preferences
-#   include: system.yml
-
-# - name: Backup current dotfiles
-#   copy:
-#     src: "{{ item }}"
-#     dest: ~/.dotfiles_backup
-#   with_fileglob:
-#     - "~/Projects/ansible-dotfiles/resources/dotfiles/*" # might need to change it later with a var
-
-# - name: Symlink dotfiles from repo to user's dotfiles
-#   file:
-#     src: "{{ item }}"
-#     dest: $HOME/{{ item }}
-#     state: link
-#     force: yes
-#   with_fileglob:
-#     - "~/Projects/ansible-dotfiles/resources/dotfiles/*" # might need to change it later with a var
+- name: apply system preferences
+  include: system.yml

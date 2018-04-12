@@ -12,11 +12,12 @@ brew_apps:
   - node
   - pyenv
   - rbenv
-  - ruby-build
   - rbenv-bundler
+  - ruby-build
   - shellcheck
   - tldr
   - vim
+  - yarn
   - zsh
 
 # homebrew cask applications
@@ -40,19 +41,9 @@ cask_apps:
   - numi                      # http://numi.io
   - punto-switcher            # https://yandex.ru/soft/punto/
   - qlstephen                 # Preview plain text files without or with unknown file extension. Example: README, CHANGELOG, index.styl, etc.
+  - rescuetime
   - skype
   - spectacle                 # https://www.spectacleapp.com
   - virtualbox
   - virtualbox-extension-pack
   - visual-studio-code
-
-
-# downloads:
-#    zwift:
-#      name: Zwift
-#      url: http://cdn.zwift.com/app/ZwiftOSX.dmg
-#      dest: "{{general.local_home}}/Downloads/ZwiftOSX.dmg"
-#    suuntolink:
-#      name: Suunto Movescount link
-#      url: http://suuntolink.static.movescount.com/Suuntolink_installer.dmg
-#      dest: "{{general.local_home}}/Downloads/Suuntolink_installer.dmg"

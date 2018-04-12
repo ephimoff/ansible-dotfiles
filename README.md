@@ -2,7 +2,6 @@
 
 ## TODO
 
-- dotfiles
 - ruby
 - vim
 - ssh
@@ -10,7 +9,7 @@
 - templates
 - travis
 - proper readme
-- enable abck all commented code
+    - a manual step to enable right font in terminal
 - rewrite system with defaults module
 - maybe restructure code a little bit better
 

@@ -48,8 +48,6 @@
 
 - name: symlink VS Code prefs
   file:
-    # src: "{{general.local_home}}/Projects/ansible-dotfiles/files/vscode/{{ item.path }}"
-    # dest: "{{general.local_home}}/Library/Application\ Support/Code/User/{{ item.dest }}"
     src: "{{general.local_home}}/Projects/ansible-dotfiles/files/vscode/{{ item }}"
     dest: "{{general.local_home}}/Library/Application\ Support/Code/User/{{ item }}"
     state: link
