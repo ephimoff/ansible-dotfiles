@@ -110,3 +110,8 @@ ruby_gems:
   - mdl
   - rubocop
   - yaml-lint
+
+# system_preferences
+screenshots:
+  - location: "{{general.local_home}}/Pictures"
+  - format: "png"
