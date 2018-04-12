@@ -3,7 +3,7 @@
   shell: eval "$(rbenv init -)"
 
 - name: install ruby versions
-  shell: rbenv install {{ item }}
+  shell: "rbenv install {{ item }}"
   with_items:
     - 2.0.0-p598
     - 2.2.0
@@ -13,7 +13,7 @@
 
 - name: install gems
   gem:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - bundler
