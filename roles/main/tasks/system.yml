@@ -256,7 +256,7 @@
     - {key: 'askForPassword', type: 'int', value: '1'}
     - {key: 'askForPasswordDelay', type: 'int', value: '0'}
 
-- name: 'screen | save screenshots to the {{ screenshots.location }} directory'
+- name: 'screen | save screenshots to the defiend directory'
   # shell: defaults write com.apple.screencapture location -string "{{general.local_home}}/Pictures"
   osx_defaults:
     domain: com.apple.screencapture
@@ -265,7 +265,7 @@
     value: "{{ screenshots.location }}"
     state: present
 
-- name: 'screen | save screenshots in {{ screenshots.format }} format'
+- name: 'screen | save screenshots in defined format'
   # shell: defaults write com.apple.screencapture type -string "png"
   osx_defaults:
     domain: com.apple.screencapture

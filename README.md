@@ -8,8 +8,7 @@
 - travis
 - proper readme
     - a manual step to enable right font in terminal
-- rewrite system with defaults module
-- maybe restructure code a little bit better
+- maybe restructure code a little bit better: split based on a role
 - symlink scripts folder - optional (`ln -s ~/Projects/scripts ~/.scripts`)
 - node apps
 
