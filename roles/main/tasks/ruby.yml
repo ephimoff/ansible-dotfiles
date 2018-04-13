@@ -5,7 +5,7 @@
 - name: check installed ruby versions
   shell: rbenv versions --bare
   register: rbenv_installed_ruby_versions
-  changed_when: False
+  changed_when: false
 
 - name: install ruby versions
   command: "rbenv install {{ item }}"
@@ -15,7 +15,7 @@
 - name: check default ruby version
   shell: rbenv global
   register: rbenv_installed_default_ruby_version
-  changed_when: False
+  changed_when: false
 
 - name: set default ruby version
   command: "rbenv global {{ default_ruby_version }}"

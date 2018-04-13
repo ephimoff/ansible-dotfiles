@@ -1,0 +1,48 @@
+################
+# orion specific
+################
+Host idm*.orionsaas
+    User ec2-user
+
+Host *.stable.orionsaas
+    GSSAPIAuthentication no
+    PasswordAuthentication no
+    IdentitiesOnly yes
+    ProxyCommand ssh -W %h:%p bastion.stable.mgmt.odl.io
+    IdentityFile ~/.ssh/id_rsa
+    User antone
+
+Host puppet-master-graviton.odl.io
+    User centos
+    PasswordAuthentication no
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/puppet_id_rsa
+
+Host *.blue.orionsaas
+    GSSAPIAuthentication no
+    PasswordAuthentication no
+    IdentitiesOnly yes
+    User centos
+    ProxyCommand ssh -W %h:%p bastion-blue.odl.io
+    IdentityFile ~/.ssh/puppet_id_rsa
+    UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+    LogLevel ERROR
+
+Host graviton-jump-host
+   Hostname graviton-jump-host-auckland
+   DynamicForward 1084
+   ForwardAgent yes
+   PasswordAuthentication no
+   IdentitiesOnly yes
+   IdentityFile ~/.ssh/id_rsa
+
+Host graviton-jump-host-london
+    Hostname graviton-jump-host-london.orion.internal
+    ForwardAgent yes
+    DynamicForward 1086
+
+Host graviton-jump-host-scottsdale
+    Hostname graviton-jump-host-scottsdale.orion.internal
+    ForwardAgent yes
+    DynamicForward 1087

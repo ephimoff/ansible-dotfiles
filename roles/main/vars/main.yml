@@ -114,13 +114,12 @@ ruby_gems:
 
 # system_preferences
 screenshots:
-  - location: ~/Pictures
-  - format: "png"
+  location: "{{general.local_home}}/Pictures"
+  format: "png"
 
 # mas settings
 mas_email: ""
 mas_password: ""
-# mas_installed_app_ids: [] # Deprecated
 mas_installed_apps:
   - { id: 425424353, name: "The Unarchiver" }
   - { id: 443987910, name: "1Password" }

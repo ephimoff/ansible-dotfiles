@@ -49,3 +49,6 @@
 
 - name: install MAS apps
   include: mas.yml
+
+- name: add ssh config
+  include: ssh.yml
