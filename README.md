@@ -2,8 +2,12 @@
 
 ## TODO
 
-- vim packages
+- ~~dotfiles~~
+- ~~ruby~~
+- ~~vim~~
+    - vim packages
 - ssh
+- ~~mas~~
 - travis
 - proper readme
     - a manual step to enable right font in terminal

@@ -125,6 +125,6 @@ mas_installed_apps:
   - { id: 443987910, name: "1Password" }
   - { id: 775737590, name: "iA Writer" }
   - { id: 407963104, name: "Pixelmator" }
-  - { id: 497799835, name: "Xcode (8.1)" }
+  # - { id: 497799835, name: "Xcode (8.1)" }
 mas_upgrade_all_apps: no
 mas_signin_dialog: no
