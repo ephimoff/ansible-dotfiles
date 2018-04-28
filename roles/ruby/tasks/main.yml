@@ -1,31 +1,39 @@
 ---
-- name: init rbenv
+- name: ruby | ensure rbenv is installed.
+  homebrew: 
+    name: "{{ item }} "
+    state: present
+  with_items:
+    - rbenv
+    - rbenv-bundler
+
+- name: ruby | init rbenv
   shell: eval "$(rbenv init -)"
 
-- name: check installed ruby versions
+- name: ruby | check installed ruby versions
   shell: rbenv versions --bare
   register: rbenv_installed_ruby_versions
   changed_when: false
 
-- name: install ruby versions
+- name: ruby | install ruby versions
   command: "rbenv install {{ item }}"
   when: rbenv_installed_ruby_versions.stdout.find(item) == -1
   with_items: "{{ ruby_versions }}"
 
-- name: check default ruby version
+- name: ruby | check default ruby version
   shell: rbenv global
   register: rbenv_installed_default_ruby_version
   changed_when: false
 
-- name: set default ruby version
+- name: ruby | set default ruby version
   command: "rbenv global {{ default_ruby_version }}"
   when: rbenv_installed_default_ruby_version.stdout.find(default_ruby_version) == -1
 
-- name: install gems
+- name: ruby | install gems
   gem:
     name: "{{ item }}"
     state: present
   with_items: "{{ ruby_gems }}"
 
-- name: rehash rbenv
+- name: ruby | rehash rbenv
   shell: rbenv rehash

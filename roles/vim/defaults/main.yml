@@ -1,0 +1,3 @@
+---
+vundle_config_dir: "{{general.local_home}}/.vim"
+vundle_repo: "git://github.com/VundleVim/Vundle.vim.git"

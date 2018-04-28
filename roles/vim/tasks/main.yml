@@ -1,0 +1,37 @@
+# ---
+# - name: vim | ensure Vim is installed.
+#   homebrew: 
+#     name: vim
+#     state: present
+
+# - name: vim | install Vundle
+#   git:
+#     repo: https://github.com/VundleVim/Vundle.vim.git
+#     dest: "{{general.local_home}}/.vim/bundle/Vundle.vim"
+
+# - name: install vim plugins
+#   shell: vim -e -c PluginInstall -c quitall 2> /dev/null
+
+---
+- name: vim | Make Vim directory
+  become: false
+  file:
+    path: "{{ vundle_config_dir }}"
+    state: directory
+
+- name: vim | Make Vim bundle directory
+  become: false
+  file:
+    path: "{{ vundle_config_dir }}/bundle"
+    state: directory
+
+- name: vim | Clone vundle
+  become: false
+  git:
+    repo: "{{ vundle_repo }}"
+    dest: "{{ vundle_config_dir }}/bundle/Vundle.vim"
+    accept_hostkey: "no"
+    version: "master"
+
+- name: vim | Install Vim plugins
+  command: "vim +PluginInstall +qall"

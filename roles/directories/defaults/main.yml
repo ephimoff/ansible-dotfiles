@@ -1,0 +1,8 @@
+# folders to create
+folders:
+  - ~/Downloads/.transmission/incomplete
+  - ~/Projects/eclipse_workspace
+  - ~/tmp
+  - ~/.dotfiles_backup
+  - ~/.config
+  - ~/.vim/bundle/

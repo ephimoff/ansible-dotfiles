@@ -1,0 +1,34 @@
+---
+vs_code_extensions: 
+  - Alan.stylus
+  - AlanWalk.markdown-toc
+  - DavidAnson.vscode-markdownlint
+  - PKief.material-icon-theme
+  - alefragnani.project-manager
+  - annsk.alignment
+  - casian.plsql
+  - dbaeumer.jshint
+  - eamodio.gitlens
+  - emilast.LogFileHighlighter
+  - timonwong.shellcheck
+  - tonsky.theme-alabaster
+  - PeterJausovec.vscode-docker
+  - docsmsft.docs-authoring-pack
+  - docsmsft.docs-markdown
+  - michelemelluso.code-beautifier
+  - mohsen1.prettify-json
+  - mrmlnc.vscode-pugbeautify
+  - ms-docfx.DocFX
+  - redhat.vscode-yaml
+  - vscoss.vscode-ansible
+  - wholroyd.jinja
+
+# TODO: need to figure out the dependecy
+vs_code_prefs:
+  - settings.json
+  - keybindings.json
+  - projects.json
+  - snippets
+
+# TODO: need to figure out the dependecy
+terminal_theme_location: "{{general.local_home}}/Projects/ansible-dotfiles/files/terminal/Snazzy.terminal"

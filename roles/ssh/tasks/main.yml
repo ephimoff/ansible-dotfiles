@@ -1,0 +1,27 @@
+# - name: ssh | ensure .ssh/config exist
+#   file:
+#     path: "{{general.local_home}}/.ssh/config"
+#     state: file
+#     mode: 700
+#     register: ssh_config
+#     changed_when: false
+
+# - name: ssh | copy ssh config if doesn't exists
+#   copy:
+#     src: "{{general.local_home}}/Projects/ansible-dotfiles/files/ssh/config"
+#     dest: "{{general.local_home}}/.ssh/config"
+#   when: ssh_config.stat.exists
+
+# - name: ssh | append orion specific ssh
+#   shell: cat "{{general.local_home}}/Projects/ansible-dotfiles/files/ssh/orion" >> "{{general.local_home}}/.ssh/config"
+#   when: ssh_config.stat.exists
+#   tags: 
+#     - orion
+
+---
+
+- name: ssh | copy ssh_config as wide system config
+  template:
+    src: "ssh_config.j2"
+    dest: "{{ ssh_config_path }}"
+    mode: 0644

@@ -1,0 +1,6 @@
+- name: Create useful directories if they don't exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+  with_items: "{{ folders }}"

@@ -1,0 +1,76 @@
+---
+# The GitHub repository for Homebrew core.
+homebrew_repo: https://github.com/Homebrew/brew
+
+# The path where Homebrew will be installed (homebrew_prefix is the parent directory). 
+# It is recommended you stick to the default, otherwise Homebrew might have some weird issues. 
+# If you change this variable, you should also manually create a symlink back to /usr/local so things work as Homebrew expects.
+homebrew_prefix: /usr/local
+homebrew_install_path: "{{ homebrew_prefix }}/Homebrew"
+
+# The path where brew will be installed.
+homebrew_brew_bin_path: /usr/local/bin
+
+homebrew_installed_packages:
+  - bash
+  - bash-completion
+  - git
+  - jq
+  - mas
+  - node
+  - pyenv
+  - rbenv
+  - rbenv-bundler
+  - ruby-build
+  - shellcheck
+  - tldr
+  - vim
+  - yarn
+  - zsh
+
+
+# Whether to upgrade homebrew and all packages installed by homebrew. 
+# If you prefer to manually update packages via brew commands, leave this set to no.
+homebrew_upgrade_all_packages: no
+
+# Taps you would like to make sure Homebrew has tapped.
+homebrew_taps:
+  - homebrew/core
+  - caskroom/cask
+  - caskroom/versions
+  - caskroom/fonts
+
+# Apps you would like to have installed via cask. 
+# Search for popular apps to see if they're available for install via Cask. 
+# Cask will not be used if it is not included in the list of taps in the homebrew_taps variable.
+homebrew_cask_apps:
+  - bettertouchtool
+  - caffeine                  # http://lightheadsw.com/caffeine/
+  - docker
+  - dropbox
+  - eclipse-ide
+  - eclipse-java
+  - firefox
+  - flycut                    # https://github.com/TermiT/Flycut/
+  - font-fira-code
+  - font-source-code-pro
+  - google-chrome
+  - grammarly                 # https://www.grammarly.com
+  - highsierramediakeyenabler # disable annoying behaviour of media keys for Safari 
+  - intellij-idea-ce
+  - java
+  - karabiner-elements
+  - notion                    # https://www.notion.so
+  - numi                      # http://numi.io
+  - punto-switcher            # https://yandex.ru/soft/punto/
+  - qlstephen                 # Preview plain text files without or with unknown file extension. Example: README, CHANGELOG, index.styl, etc.
+  - rescuetime
+  - skype
+  - spectacle                 # https://www.spectacleapp.com
+  - virtualbox
+  - virtualbox-extension-pack
+  - visual-studio-code
+
+
+# Directory where applications installed via cask should be installed.
+homebrew_cask_appdir: /Applications

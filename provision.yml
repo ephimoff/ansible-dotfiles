@@ -2,5 +2,17 @@
 - name: set up a mac
   hosts: local
   gather_facts: false
+  vars_files:
+    - default.config.yml
   roles:
-    - main 
+    - directories
+    - brew
+    - ruby
+    - yarn
+    - mas
+    - zsh
+    - dotfiles
+    - applications-preferences
+    - macos
+    - vim
+    - ssh

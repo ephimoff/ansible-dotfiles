@@ -1,0 +1,19 @@
+---
+- name: zsh | Setting up zsh with oh-my-zsh
+  shell: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"' 
+
+- name: zsh | Getting the theme of choice for oh-my-zsh
+  git:
+    repo: "{{ oh_my_zsh_theme_repo }}"
+    dest: "{{ oh_my_zsh_theme_dest }}"
+
+- name: zsh | Making zsh default shell
+  shell: chsh -s /bin/zsh
+  become: yes
+
+# - name: zsh | Copy oh-my-zsh config
+#   template:
+#     src: templates/zshrc.j2
+#     dest: ~/.zshrc
+#     owner: "{{ do_admin_user }}"
+#     group: "{{ do_admin_user }}"

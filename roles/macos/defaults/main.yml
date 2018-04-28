@@ -1,0 +1,57 @@
+---
+# system_preferences
+finder:
+  enable_folders_on_top: true
+  enable_full_path: true
+  show_status_bar: true
+  show_path_bar: true
+  search_scope: SCcf # search the current folder by default
+  default_view: clmv # Use column view by default
+  show_extensions: true
+
+general:
+  avoid_creating_ds_store_on_network: true
+  avoid_creating_ds_store_on_usb: true
+  enable_expanded_save_panel: true
+  enable_saving_on_icloud: false
+  enable_additional_confirmation: false
+  show_battery_percent: true
+  disable_photos_auto_launch: true
+
+trackpad:
+  enable_tap_to_click: 1 # true
+  enable_lookup: 0 # false
+  enable_three_finger_drag: 1 # true
+  enable_swipe_navigation: false
+  enable_autocorrect: false
+
+mail:
+  enable_full_address_copy: false
+
+safari:
+  enable_auto_opening_downloaded_files: false
+  enable_thumbnail_cashe: 2 # false
+  enable_debug_menu: true
+  enable_reporting_searches: false
+
+keyboard:
+  enable_tab_in_modal: 2 # true
+
+screenshots:
+  location: "{{general.local_home}}/Pictures"
+  format: "png"
+  disable_shadow: true
+
+terminal:
+  theme: Snazzy
+  enable_line_marks: 0 # false
+
+calendar:
+  first_day_of_the_week: 1 # Monday
+
+textedit:
+  enable_rich_text: 0 # false
+  encoding_format: 4 # UTF-8
+
+messages:
+  enable_spellchecking: false
