@@ -11,6 +11,13 @@
     ```sh
     xcode-select --install
     ```
+
+1. Clone this repository by running the following commands:
+
+    ```sh
+    mkdir ~/Projects
+    git clone https://github.com/ephimoff/ansible-dotfiles.git ~/Projects/.
+    ```
 1. Run `./bootstrap.sh`
 
 ## TODO
