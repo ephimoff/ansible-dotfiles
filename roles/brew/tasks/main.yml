@@ -125,9 +125,6 @@
 #     - share/zsh/site-functions
 #     - var
 
-- name: brew | Force update brew after installation.
-  command: "{{ homebrew_brew_bin_path }}/brew update --force"
-
 - name: brew | Ensure configured taps are tapped.
   homebrew_cask:
     name: "{{ item }}"
