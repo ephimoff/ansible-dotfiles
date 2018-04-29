@@ -127,7 +127,6 @@
 
 - name: brew | Force update brew after installation.
   command: "{{ homebrew_brew_bin_path }}/brew update --force"
-  when: homebrew_binary.stat.exists == false
 
 - name: brew | Ensure configured taps are tapped.
   homebrew_cask:

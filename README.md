@@ -3,22 +3,25 @@
 ## Installation
 
 1. Install xcode from the app store.
-
 1. Open xcode and accept the license agreement.
-
 1. Install xcode command line tools:
-
-    ```sh
+    ```
     xcode-select --install
     ```
-
 1. Clone this repository by running the following commands:
-
-    ```sh
-    mkdir ~/Projects
-    git clone https://github.com/ephimoff/ansible-dotfiles.git ~/Projects/.
     ```
-1. Run `./bootstrap.sh`
+    mkdir ~/Projects
+    git clone https://github.com/ephimoff/ansible-dotfiles.git ~/Projects/ansible-dotfiles
+    ```
+1. Run the bootstraping script:
+    ```
+    cd ~/Projects/ansible-dotfiles
+    ./bootstrap.sh
+    ```
+1. Run the playbook:
+    ```
+    ansible-playbook -i inventory provision.yml --ask-become-pass
+    ```
 
 ## TODO
 
