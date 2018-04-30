@@ -1,6 +1,7 @@
 ---
 - name: zsh | Setting up zsh with oh-my-zsh
   shell: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"' 
+  become: yes
 
 - name: zsh | Getting the theme of choice for oh-my-zsh
   git:
