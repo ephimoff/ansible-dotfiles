@@ -1,11 +1,11 @@
 ---
-- name: ssh | ensure .ssh/config exist
-  file:
-    path: "{{general.local_home}}/.ssh/config"
-    state: file
-    mode: 700
-    # register: ssh_config
-    # changed_when: false
+# - name: ssh | ensure .ssh/config exist
+#   file:
+#     path: "{{general.local_home}}/.ssh/config"
+#     state: file
+#     mode: 700
+#     register: ssh_config
+#     changed_when: false
 
 # - name: ssh | copy ssh config if doesn't exists
 #   copy:
@@ -21,7 +21,7 @@
 
 
 
-- name: ssh | copy ssh_config as wide system config
+- name: ssh | Copy ssh_config as wide system config
   template:
     src: "ssh_config.j2"
     dest: "{{ ssh_config_path }}"
