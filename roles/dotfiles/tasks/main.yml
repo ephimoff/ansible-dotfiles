@@ -25,6 +25,7 @@
     src: "{{ dotfiles_repo_local_destination }}/{{ item }}"
     dest: "{{ dotfiles_home }}/{{ item }}"
     state: link
+    force: yes
   with_items: "{{ dotfiles_files }}"
 
 
