@@ -54,7 +54,7 @@
     value: "{{ finder.show_extensions }}"
     state: present
 
-- name: 'general | Avoid creating .DS_Store files on network volumes'
+- name: 'system | Avoid creating .DS_Store files on network volumes'
   osx_defaults:
     domain: com.apple.desktopservices
     key: DSDontWriteNetworkStores
@@ -63,10 +63,7 @@
     # value: true
     state: present
 
-- name: print the variable
-  debug: var=general
-
-- name: 'general | Avoid creating .DS_Store files on USB Volumes'
+- name: 'system | Avoid creating .DS_Store files on USB Volumes'
   osx_defaults:
     domain: com.apple.desktopservices
     key: DSDontWriteUSBStores
@@ -76,7 +73,7 @@
     state: present
 
 
-- name: 'general | Expand save panel by default'
+- name: 'system | Expand save panel by default'
   osx_defaults:
     domain: NSGlobalDomain
     key: NSNavPanelExpandedStateForSaveMode
@@ -84,7 +81,7 @@
     value: "{{ system.enable_expanded_save_panel }}"
     state: present
 
-- name: 'general | Sets default save target to be a local disk, not iCloud'
+- name: 'system | Sets default save target to be a local disk, not iCloud'
   osx_defaults:
     domain: NSGlobalDomain
     key: NSDocumentSaveNewDocumentsToCloud
@@ -92,7 +89,7 @@
     value: "{{ system.enable_saving_on_icloud }}"
     state: present
 
-- name: 'general | Disable the `Are you sure you want to open this application?` dialog'
+- name: 'system | Disable the `Are you sure you want to open this application?` dialog'
   osx_defaults:
     domain: com.apple.LaunchServices
     key: LSQuarantine
@@ -100,7 +97,7 @@
     value: "{{ system.enable_additional_confirmation }}"
     state: present
 
-- name: 'general | Show battery percent'
+- name: 'system | Show battery percent'
   osx_defaults:
     domain: com.apple.menuextra.battery
     key: ShowPercent
@@ -108,7 +105,7 @@
     value: "{{ system.show_battery_percent }}"
     state: present
 
-- name: 'general | Prevent Photos from opening automatically when devices are plugged in'
+- name: 'system | Prevent Photos from opening automatically when devices are plugged in'
   osx_defaults:
     domain: com.apple.ImageCapture
     host: currentHost
@@ -117,7 +114,7 @@
     value: "{{ system.disable_photos_auto_launch }}"
     state: present
 
-- name: 'general | Top right screen corner → put display to sleep'
+- name: 'system | Top right screen corner → put display to sleep'
   osx_defaults:
     domain: write com.apple.dock
     key: "{{ item.key }}"
@@ -175,12 +172,15 @@
     value: "{{ trackpad.enable_swipe_navigation }}"
     state: present
 
+- name: print the variable
+  debug: var=system
+
 - name: 'keyboard | Enable full keyboard access for all controls, (e.g. enable Tab in modal dialogs)'
   osx_defaults:
     domain: NSGlobalDomain
     key: AppleKeyboardUIMode
     type: int
-    value: "{{ trackpad.enable_tab_in_modal }}"
+    value: "{{ keyboard.enable_tab_in_modal }}"
     state: present
 
 - name: 'keyboard | Disable auto-correct'
@@ -188,7 +188,7 @@
     domain: NSGlobalDomain
     key: NSAutomaticSpellingCorrectionEnabled
     type: bool
-    value: "{{ trackpad.enable_autocorrect }}"
+    value: "{{ keyboard.enable_autocorrect }}"
     state: present
 
 - name: 'mail.app | Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>`'

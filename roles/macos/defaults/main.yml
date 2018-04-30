@@ -23,7 +23,6 @@ trackpad:
   enable_lookup: 0 # false
   enable_three_finger_drag: 1 # true
   enable_swipe_navigation: false
-  enable_autocorrect: false
 
 mail:
   enable_full_address_copy: false
@@ -36,6 +35,7 @@ safari:
 
 keyboard:
   enable_tab_in_modal: 2 # true
+  enable_autocorrect: false
 
 screenshots:
   location: "{{general.local_home}}/Pictures"
