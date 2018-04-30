@@ -64,7 +64,7 @@
     state: present
 
 - name: print the variable
-  debug: var=general.avoid_creating_ds_store_on_usb
+  debug: var=general
 
 - name: 'general | Avoid creating .DS_Store files on USB Volumes'
   osx_defaults:
