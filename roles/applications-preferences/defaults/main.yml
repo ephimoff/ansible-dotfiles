@@ -4,9 +4,9 @@ dotfiles_repo_accept_hostkey: no
 dotfiles_repo_local_destination: "{{general.local_home}}/Projects/dotfiles"
 
 preferences:
-  karabiner_src: "{{dotfiles_repo_local_destination}}/files/karabiner/karabiner"
-  spectacle_src: "{{dotfiles_repo_local_destination}}/files/spectacle/Shortcuts.json"
-  vscode_src: "{{dotfiles_repo_local_destination}}/files/vscode"
+  karabiner_src: "{{dotfiles_repo_local_destination}}/applications/karabiner/karabiner"
+  spectacle_src: "{{dotfiles_repo_local_destination}}/applications/spectacle/Shortcuts.json"
+  vscode_src: "{{dotfiles_repo_local_destination}}/applications/vscode"
 
 vs_code_extensions: 
   - Alan.stylus
@@ -40,4 +40,4 @@ vs_code_prefs:
   - snippets
 
 # TODO: need to figure out the dependecy
-terminal_theme_location: "{{dotfiles_repo_local_destination}}/files/terminal/Snazzy.terminal"
+terminal_theme_location: "{{dotfiles_repo_local_destination}}/applications/terminal/Snazzy.terminal"
