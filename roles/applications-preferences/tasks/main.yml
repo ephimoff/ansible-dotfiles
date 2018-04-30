@@ -1,11 +1,4 @@
 ---
-# - name: apps | Ensure that Karabiner directory exists
-#   file:
-#     path: "{{general.local_home}}/.config/karabiner"
-#     state: directory
-#     mode: 0755
-#   ignore_errors: yes
-
 - name: apps | Symlink Karabiner-Elements prefs
   file:
     src: "{{general.local_home}}/Projects/ansible-dotfiles/files/karabiner/karabiner"
@@ -32,10 +25,15 @@
     state: directory
     mode: 0755
 
+- name: apps | Check installed VS Code extensions
+  shell: code --list-extensions
+  register: code_installed_extensions
+  changed_when: false
+
 - name: apps | Install VS Code extensions
   shell: "code --install-extension {{ item }}"
+  when: code_installed_extensions.stdout.find(item) == -1
   with_items: "{{ vs_code_extensions }}"
-
 
 - name: apps | Symlink VS Code prefs
   file:
