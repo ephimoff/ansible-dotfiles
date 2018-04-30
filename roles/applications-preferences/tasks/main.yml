@@ -1,7 +1,13 @@
 ---
+- name: apps | Ensure dotfiles repository is cloned locally.
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_repo_local_destination }}"
+    accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
+
 - name: apps | Symlink Karabiner-Elements prefs
   file:
-    src: "{{general.local_home}}/Projects/ansible-dotfiles/files/karabiner/karabiner"
+    src: "{{ preferences.karabiner_src }}"
     dest: "{{general.local_home}}/.config/karabiner"
     state: link
     force: yes
@@ -14,7 +20,7 @@
 
 - name: apps | Symlink Spectacle prefs
   file:
-    src: "{{general.local_home}}/Projects/ansible-dotfiles/files/spectacle/Shortcuts.json"
+    src: "{{ preferences.spectacle_src }}"
     dest: "{{general.local_home}}/Library/Application\ Support/Spectacle/Shortcuts.json"
     state: link
     force: yes
@@ -37,7 +43,7 @@
 
 - name: apps | Symlink VS Code prefs
   file:
-    src: "{{general.local_home}}/Projects/ansible-dotfiles/files/vscode/{{ item }}"
+    src: "{{ preferences.vscode_src }}/{{ item }}"
     dest: "{{general.local_home}}/Library/Application\ Support/Code/User/{{ item }}"
     state: link
     force: yes
