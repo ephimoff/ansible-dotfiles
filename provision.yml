@@ -13,6 +13,6 @@
     - {role: zsh, tags: all}
     - {role: dotfiles, tags: all}
     - {role: applications-preferences, tags: all}
-    - {role: macos, tags: macos}
+    - {role: macos, tags: all}
     - {role: vim, tags: dev}
-    - {role: ssh, tags: dev}
+    - {role: ssh, tags: ssh}

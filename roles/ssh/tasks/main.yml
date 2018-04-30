@@ -1,10 +1,11 @@
-# - name: ssh | ensure .ssh/config exist
-#   file:
-#     path: "{{general.local_home}}/.ssh/config"
-#     state: file
-#     mode: 700
-#     register: ssh_config
-#     changed_when: false
+---
+- name: ssh | ensure .ssh/config exist
+  file:
+    path: "{{general.local_home}}/.ssh/config"
+    state: file
+    mode: 700
+    # register: ssh_config
+    # changed_when: false
 
 # - name: ssh | copy ssh config if doesn't exists
 #   copy:
@@ -18,7 +19,7 @@
 #   tags: 
 #     - orion
 
----
+
 
 - name: ssh | copy ssh_config as wide system config
   template:
