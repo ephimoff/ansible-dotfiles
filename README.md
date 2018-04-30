@@ -20,17 +20,17 @@
     ```
 1. Run the playbook:
     ```
-    <!-- ansible-playbook -i inventory provision.yml --ask-become-pass -->
+    <!-- ansible-playbook -i inventory.ini provision.yml --ask-become-pass -->
     ansible-playbook provision.yml
     ```
 1. To provision only certain tags run
     - By tag:
     ```
-    ansible-playbook -i inventory provision.yml --ask-become-pass --tags "all"
+    ansible-playbook -i inventory.ini provision.yml --ask-become-pass --tags "all"
     ```
     - Skip tags
     ```
-    ansible-playbook -i inventory provision.yml --ask-become-pass --skip-tags "ruby, js"
+    ansible-playbook -i inventory.ini provision.yml --ask-become-pass --skip-tags "ruby, js"
     ```
 
 ## TODO
