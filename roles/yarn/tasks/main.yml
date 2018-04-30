@@ -1,10 +1,14 @@
 ---
+- name: yarn | Ensure Node is installed.
+  homebrew: 
+    name: node
+    state: present
+
 - name: yarn | Ensure Node and Yarn are installed.
   homebrew: 
-    name: "{{ item }} "
+    name: "{{ item }}"
     state: present
   with_items:
-    - node
     - yarn
 
 - name: yarn | Ensure node packages are installed

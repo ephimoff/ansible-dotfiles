@@ -1,18 +1,18 @@
 ---
-- name: set up a mac
+- name: Provision a mac
   hosts: local
   gather_facts: false
   vars_files:
     - default.config.yml
   roles:
-    - directories
-    - brew
-    - ruby
-    - yarn
-    - mas
-    - zsh
-    - dotfiles
-    - applications-preferences
-    - macos
-    - vim
-    - ssh
+    - {role: directories, tags: all}
+    - {role: brew, tags: dev}
+    - {role: ruby, tags: [dev, ruby]}
+    - {role: yarn, tags: [dev, js]}
+    - {role: mas, tags: all}
+    - {role: zsh, tags: all}
+    - {role: dotfiles, tags: all}
+    - {role: applications-preferences, tags: all}
+    - {role: macos, tags: all}
+    - {role: vim, tags: dev}
+    - {role: ssh, tags: dev}

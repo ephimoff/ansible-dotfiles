@@ -5,7 +5,7 @@ ruby_versions:
   - 2.5.1
 
 # ruby default version
-default_ruby_version: 2.2.0
+default_ruby_version: 2.5.1
 
 # ruby gems to install
 ruby_gems:
