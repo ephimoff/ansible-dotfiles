@@ -11,8 +11,8 @@
     - {role: yarn, tags: [dev, js]}
     - {role: mas, tags: all}
     - {role: zsh, tags: all}
-    - {role: dotfiles, tags: all}
+    - {role: dotfiles, tags: dot}
     - {role: applications-preferences, tags: all}
     - {role: macos, tags: all}
     - {role: vim, tags: dev}
-    - {role: ssh, tags: ssh}
+    - {role: ssh, tags: all}
