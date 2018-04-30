@@ -9,7 +9,7 @@ finder:
   default_view: clmv # Use column view by default
   show_extensions: true
 
-general:
+system:
   avoid_creating_ds_store_on_network: true
   avoid_creating_ds_store_on_usb: true
   enable_expanded_save_panel: true
