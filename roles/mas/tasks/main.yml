@@ -29,3 +29,4 @@
 - name: mas | Upgrade all apps (if configured)
   command: mas upgrade
   when: mas_upgrade_all_apps
+  ignore_errors: yes

@@ -40,6 +40,7 @@
 - symlink scripts folder - optional (`ln -s ~/Projects/scripts ~/.scripts`)
 - add conditions to some tasks (e.g. brew clean only if apps installed)
 - role as a dependecy for another role
+- review and update extra re-installs, i.e. VS Code extensions
 
 ## Manual steps
 

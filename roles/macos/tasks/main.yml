@@ -63,13 +63,18 @@
     value: true
     state: present
 
+- name: print the variable
+  debug: var=general.avoid_creating_ds_store_on_usb
+
 - name: 'general | Avoid creating .DS_Store files on USB Volumes'
   osx_defaults:
     domain: com.apple.desktopservices
     key: DSDontWriteUSBStores
     type: bool
-    value: "{{ general.avoid_creating_ds_store_on_usb }}"
+    # value: "{{ general.avoid_creating_ds_store_on_usb }}"
+    value: true
     state: present
+
 
 - name: 'general | Expand save panel by default'
   osx_defaults:
