@@ -172,9 +172,6 @@
     value: "{{ trackpad.enable_swipe_navigation }}"
     state: present
 
-- name: print the variable
-  debug: var=system
-
 - name: 'keyboard | Enable full keyboard access for all controls, (e.g. enable Tab in modal dialogs)'
   osx_defaults:
     domain: NSGlobalDomain
