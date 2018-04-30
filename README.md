@@ -41,6 +41,11 @@
 - add conditions to some tasks (e.g. brew clean only if apps installed)
 - role as a dependecy for another role
 
-## Notes
+## Manual steps
 
-Run `ansible-playbook -i inventory provision.yml --ask-become-pass`
+- Add license for Bettertouch Tool, or purchase one
+- Enable right ligature font in Terminal
+
+## Possible issues
+
+During the `brew` role there might be an error related to vagrant Instalation. It's the macOS that is blocking it. Go to macOS preferences -> Security and allow OS to install it. And restart the playbook.

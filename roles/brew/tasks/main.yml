@@ -6,10 +6,7 @@
 #   args:
 #     creates: /usr/local/bin/brew
 
-# - name: ensure homebrew is updated 
-#   homebrew:
-#     state: latest
-#     update_homebrew: yes
+
 
 # - name: tap homebrew casks/versions
 #   homebrew_tap:
@@ -124,6 +121,11 @@
 #     - share/zsh
 #     - share/zsh/site-functions
 #     - var
+
+- name: brew | Ensure homebrew is updated 
+  homebrew:
+    state: latest
+    update_homebrew: yes
 
 - name: brew | Ensure configured taps are tapped.
   homebrew_cask:
