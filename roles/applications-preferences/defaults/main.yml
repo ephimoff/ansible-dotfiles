@@ -40,4 +40,4 @@ vs_code_prefs:
   - snippets
 
 # TODO: need to figure out the dependecy
-terminal_theme_location: "{{general.local_home}}/Projects/ansible-dotfiles/files/terminal/Snazzy.terminal"
+terminal_theme_location: "{{dotfiles_repo_local_destination}}/files/terminal/Snazzy.terminal"
