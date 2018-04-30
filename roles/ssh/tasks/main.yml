@@ -3,7 +3,7 @@
   file:
     path: "{{ ssh_base_dir }}"
     state: directory
-    mode: 700
+    mode: 0644
     # register: ssh_config
     # changed_when: false
 
