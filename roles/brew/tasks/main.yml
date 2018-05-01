@@ -12,7 +12,7 @@
     update_homebrew: yes
 
 - name: brew | Ensure configured taps are tapped.
-  homebrew_cask:
+  homebrew_tap:
     name: "{{ item }}"
     state: installed
   with_items: "{{ homebrew_taps }}"

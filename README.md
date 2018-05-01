@@ -46,17 +46,15 @@
 - ~~ssh~~
     - to add orion hosts (check the tags or conditions)
 - travis
-- proper readme
-    - a manual step to enable right font in terminal
+- ~~proper readme~~
 - symlink scripts folder - optional (`ln -s ~/Projects/scripts ~/.scripts`)
 - add conditions to some tasks (e.g. brew clean only if apps installed)
-- role as a dependecy for another role
-- review and update extra re-installs, i.e. VS Code extensions
+- ~~review and update extra re-installs, i.e. VS Code extensions~~
 
 ## Manual steps
 
 - Add license for Bettertouch Tool, or purchase one
-- Enable right ligature font in Terminal
+- The default theme for zsh is Power9K and uses a ligature font. To enable it got to Terminal -> Preferences -> Profile -> Font and choose the ligature font. I prefer Fira Code that comes a default with `.brew` role
 
 ## Possible issues
 
