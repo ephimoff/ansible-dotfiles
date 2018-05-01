@@ -6,7 +6,7 @@
     - default.config.yml
   roles:
     - {role: directories, tags: all}
-    - {role: brew, tags: dev}
+    - {role: brew, tags: brew}
     - {role: ruby, tags: [dev, ruby]}
     - {role: yarn, tags: [dev, js]}
     - {role: mas, tags: all}
