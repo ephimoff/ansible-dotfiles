@@ -1,39 +1,39 @@
 ---
-- name: brew | Ensure Homebrew directory exists
+- name: Ensure Homebrew directory exists
   file:
     path: "{{ homebrew_install_path }}"
     state: directory
     mode: 0775
   become: yes
 
-- name: brew | Ensure homebrew is updated 
+- name: Ensure homebrew is updated 
   homebrew:
     state: latest
     update_homebrew: yes
 
-- name: brew | Ensure configured taps are tapped
+- name: Ensure configured taps are tapped
   homebrew_tap:
     name: "{{ item }}"
     state: present
   with_items: "{{ homebrew_taps }}"
 
-- name: brew | Install configured cask applications
+- name: Install configured cask applications
   homebrew_cask:
     name: "{{ item }}"
     state: present
   with_items: "{{ homebrew_cask_apps }}"
 
-- name: brew | Ensure configured homebrew packages are installed
+- name: Ensure configured homebrew packages are installed
   homebrew:
     name: "{{ item }}"
     state: present
   with_items: "{{ homebrew_installed_packages }}"
 
-- name: brew | Upgrade all homebrew packages (if configured)
+- name: Upgrade all homebrew packages (if configured)
   homebrew:
     update_homebrew: yes 
     upgrade_all: yes
   when: homebrew_upgrade_all_packages
 
-- name: brew | Cleanup brew packages
+- name: Cleanup brew packages
   command: brew cleanup

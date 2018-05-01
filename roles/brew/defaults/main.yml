@@ -35,10 +35,10 @@ homebrew_upgrade_all_packages: no
 
 # Taps you would like to make sure Homebrew has tapped.
 homebrew_taps:
-  - caskroom/fonts
   - caskroom/versions
   - homebrew/core
   - caskroom/cask
+  - caskroom/fonts
 
 # Apps you would like to have installed via cask. 
 # Search for popular apps to see if they're available for install via Cask. 

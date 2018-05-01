@@ -1,5 +1,5 @@
 ---
-- name: yarn | Ensure Node and Yarn are installed.
+- name: Ensure Node and Yarn are installed
   homebrew: 
     name: "{{ item }}"
     state: present
@@ -7,6 +7,6 @@
     - node
     - yarn
 
-- name: yarn | Ensure node packages are installed
+- name: Ensure node packages are installed
   shell: yarn global add {{ item }}
   with_items: "{{ node_installed_packages }}"

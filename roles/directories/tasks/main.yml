@@ -1,4 +1,4 @@
-- name: dirs | Create useful directories if they don't exist
+- name: Create useful directories if they don't exist
   file:
     path: "{{ item }}"
     state: directory

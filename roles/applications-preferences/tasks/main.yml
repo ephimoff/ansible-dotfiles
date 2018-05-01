@@ -1,47 +1,47 @@
 ---
-- name: apps | Ensure dotfiles repository is cloned locally.
+- name: Ensure dotfiles repository is cloned locally
   git:
     repo: "{{ dotfiles_repo }}"
     dest: "{{ dotfiles_repo_local_destination }}"
     accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
 
-- name: apps | Symlink Karabiner-Elements prefs
+- name: Symlink Karabiner-Elements prefs
   file:
     src: "{{ preferences.karabiner_src }}"
     dest: "{{general.local_home}}/.config/karabiner"
     state: link
     force: yes
 
-- name: apps | Ensure that Spectacle directory exists
+- name: Ensure that Spectacle directory exists
   file:
     path: "{{general.local_home}}/Library/Application\ Support/Spectacle"
     state: directory
     mode: 0755
 
-- name: apps | Symlink Spectacle prefs
+- name: Symlink Spectacle prefs
   file:
     src: "{{ preferences.spectacle_src }}"
     dest: "{{general.local_home}}/Library/Application\ Support/Spectacle/Shortcuts.json"
     state: link
     force: yes
 
-- name: apps | Ensure that VS Code directory exists
+- name: Ensure that VS Code directory exists
   file:
     path: "{{general.local_home}}/Library/Application\ Support/Code/User"
     state: directory
     mode: 0755
 
-- name: apps | Check installed VS Code extensions
+- name: Check installed VS Code extensions
   shell: code --list-extensions
   register: code_installed_extensions
   changed_when: false
 
-- name: apps | Install VS Code extensions
+- name: Install VS Code extensions
   shell: "code --install-extension {{ item }}"
   when: code_installed_extensions.stdout.find(item) == -1
   with_items: "{{ vs_code_extensions }}"
 
-- name: apps | Symlink VS Code prefs
+- name: Symlink VS Code prefs
   file:
     src: "{{ preferences.vscode_src }}/{{ item }}"
     dest: "{{general.local_home}}/Library/Application\ Support/Code/User/{{ item }}"
@@ -49,5 +49,5 @@
     force: yes
   with_items: "{{ vs_code_prefs }}"
 
-- name: apps | open terminal theme of choice
+- name: Open terminal theme of choice
   shell: "open {{ terminal_theme_location }}"
