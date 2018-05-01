@@ -66,6 +66,7 @@ homebrew_cask_apps:
   - qlstephen                 # Preview plain text files without or with unknown file extension. Example: README, CHANGELOG, index.styl, etc.
   - rescuetime
   - skype
+  - sourcetree
   - spectacle                 # https://www.spectacleapp.com
   - virtualbox
   - virtualbox-extension-pack

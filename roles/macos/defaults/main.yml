@@ -8,6 +8,7 @@ finder:
   search_scope: SCcf # search the current folder by default
   default_view: clmv # Use column view by default
   show_extensions: true
+  default_home_folder: "{{general.local_home}}/"
 
 system:
   avoid_creating_ds_store_on_network: true

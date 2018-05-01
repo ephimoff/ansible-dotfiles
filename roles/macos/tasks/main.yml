@@ -54,6 +54,17 @@
     value: "{{ finder.show_extensions }}"
     state: present
 
+- name: 'finder | Changing finder default folder to the user folder'
+  osx_defaults:
+    domain: com.apple.finder
+    key: "{{ item.key }}"
+    type: string
+    value: "{{ item.value }}"
+    state: present
+  with_items:
+    - {key: 'NewWindowTarget', value: "PfHm"}
+    - {key: 'NewWindowTargetPath', value: "{{ textedit.default_home_folder }}"}
+
 - name: 'system | Avoid creating .DS_Store files on network volumes'
   osx_defaults:
     domain: com.apple.desktopservices

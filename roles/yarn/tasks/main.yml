@@ -8,5 +8,7 @@
     - yarn
 
 - name: Ensure node packages are installed
-  shell: yarn global add {{ item }}
+  yarn: 
+    name: "{{ item }}"
+    global: yes
   with_items: "{{ node_installed_packages }}"
