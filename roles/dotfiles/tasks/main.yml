@@ -22,7 +22,7 @@
 
 - name: dotfiles | Link dotfiles into home folder.
   file:
-    src: "{{ dotfiles_repo_local_destination }}/{{ item }}"
+    src: "{{ dotfiles_repo_local_destination }}/dofiles/{{ item }}"
     dest: "{{ general.local_home }}/{{ item }}"
     state: link
     force: yes
