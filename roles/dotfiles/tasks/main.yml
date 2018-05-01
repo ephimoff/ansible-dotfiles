@@ -5,20 +5,20 @@
     dest: "{{ dotfiles_repo_local_destination }}"
     accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
 
-- name: dotfiles | Ensure all configured dotfiles are links.
-  shell: "ls -F {{ dotfiles_home }}/{{ item }}"
-  register: existing_dotfile_info
-  failed_when: false
-  check_mode: no
-  changed_when: false
-  with_items: "{{ dotfiles_files }}"
+# - name: dotfiles | Ensure all configured dotfiles are links.
+#   shell: "ls -F {{ dotfiles_home }}/{{ item }}"
+#   register: existing_dotfile_info
+#   failed_when: false
+#   check_mode: no
+#   changed_when: false
+#   with_items: "{{ dotfiles_files }}"
 
-- name: dotfiles | Remove existing dotfiles file if a replacement is being linked.
-  file:
-    path: "{{ dotfiles_home }}/{{ dotfiles_files[item.0] }}"
-    state: absent
-  when: "'@' not in item.1.stdout"
-  with_indexed_items: "{{ existing_dotfile_info.results }}"
+# - name: dotfiles | Remove existing dotfiles file if a replacement is being linked.
+#   file:
+#     path: "{{ dotfiles_home }}/{{ dotfiles_files[item.0] }}"
+#     state: absent
+#   when: "'@' not in item.1.stdout"
+#   with_indexed_items: "{{ existing_dotfile_info.results }}"
 
 - name: dotfiles | Link dotfiles into home folder.
   file:
@@ -30,7 +30,7 @@
 
 
 
-# - name: symlink dotfiles
+# - name: dotfiles | Link dotfiles into home folder
 #   file:
 #     src: "{{general.local_home}}/Projects/ansible-dotfiles/dotfiles/{{ item }}"
 #     dest: "{{general.local_home}}/{{ item }}"
