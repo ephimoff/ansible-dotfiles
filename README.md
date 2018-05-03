@@ -45,7 +45,7 @@
     - vim packages
 - ~~ssh~~
     - to add orion hosts (check the tags or conditions)
-- travis
+- ~~travis~~
 - ~~proper readme~~
 - symlink scripts folder - optional (`ln -s ~/Projects/scripts ~/.scripts`)
 - add conditions to some tasks (e.g. brew clean only if apps installed)
