@@ -1,5 +1,7 @@
 # Ansible based dotfiles
 
+[![Build Status](https://travis-ci.org/ephimoff/ansible-dotfiles.svg?branch=master)](https://travis-ci.org/ephimoff/ansible-dotfiles)
+
 ## Installation
 
 1. Install xcode from the app store.
