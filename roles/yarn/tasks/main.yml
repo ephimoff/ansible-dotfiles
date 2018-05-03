@@ -7,8 +7,15 @@
     - node
     - yarn
 
+
 - name: Ensure node packages are installed
-  yarn: 
+  npm: 
     name: "{{ item }}"
     global: yes
   with_items: "{{ node_installed_packages }}"
+
+# - name: Ensure node packages are installed
+#   yarn: 
+#     name: "{{ item }}"
+#     global: yes
+#   with_items: "{{ node_installed_packages }}"
