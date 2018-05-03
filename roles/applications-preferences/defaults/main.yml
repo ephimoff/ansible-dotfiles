@@ -22,15 +22,14 @@ vs_code_extensions:
   - timonwong.shellcheck
   - tonsky.theme-alabaster
   - PeterJausovec.vscode-docker
-  - docsmsft.docs-authoring-pack
-  - docsmsft.docs-markdown
   - michelemelluso.code-beautifier
   - mohsen1.prettify-json
   - mrmlnc.vscode-pugbeautify
-  - ms-docfx.DocFX
   - redhat.vscode-yaml
   - vscoss.vscode-ansible
   - wholroyd.jinja
+  - lukehoban.Go
+  - octref.vetur
 
 # TODO: need to figure out the dependecy
 vs_code_prefs:
