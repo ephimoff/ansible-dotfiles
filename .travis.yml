@@ -9,12 +9,18 @@ osx_image: xcode9.3
 notifications:
   email: false
   
-before_install:
-  - brew update
-  - brew outdated ansible || brew upgrade ansible
+# before_install:
+  # - brew update
+  # - brew outdated ansible || brew upgrade ansible
 
 install:
   # - brew install ansible
+
+  # Install pip
+  - sudo easy_install pip
+
+  # Install Ansible.
+  - sudo pip install ansible
 
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; echo '[privilege_escalation]'; echo 'become_ask_pass=True';} >> ansible.cfg"
