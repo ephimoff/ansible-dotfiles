@@ -19,6 +19,8 @@ install:
   - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; echo '[privilege_escalation]'; echo 'become_ask_pass=True';} >> ansible.cfg"
 
 script:
+  - "ansible --version"
+  - "ansible-playbook --version"
   # Check the role/playbook's syntax.
   - "ansible-playbook provision.yml --syntax-check"
 

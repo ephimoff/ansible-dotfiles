@@ -32,3 +32,5 @@ dotfiles_files:
   - .textlintrc
   - .vimrc
   - .zshrc
+
+dotfiles_backup_location: "{{general.local_home}}/.dotfiles_backup/"

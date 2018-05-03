@@ -52,7 +52,7 @@
 - symlink scripts folder - optional (`ln -s ~/Projects/scripts ~/.scripts`)
 - add conditions to some tasks (e.g. brew clean only if apps installed)
 - ~~review and update extra re-installs, i.e. VS Code extensions~~
-- task for backing up dotfiles
+- ~~task for backing up dotfiles~~
 
 ## Manual steps
 
