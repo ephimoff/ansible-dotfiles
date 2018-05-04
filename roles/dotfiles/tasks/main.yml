@@ -20,11 +20,19 @@
 #   when: "'@' not in item.1.stdout"
 #   with_indexed_items: "{{ existing_dotfile_info.results }}"
 
+# - name: Check if old dotfiles are present
+#   file:
+#     path: "{{ item }}"
+#     state: file or link
+#   with_items: "{{ dotfiles_files }}"
+#   register: backup_dotfiles
+
 - name: Backup existing dotfiles
   copy:
     src: "{{ general.local_home }}/{{ item }}"
     dest: "{{ dotfiles_backup_location }}"
   with_items: "{{ dotfiles_files }}"
+  ignore_errors: yes
 
 
 - name: Link dotfiles into home folder

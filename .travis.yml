@@ -30,9 +30,9 @@ script:
   # Check the role/playbook's syntax.
   - "ansible-playbook provision.yml --syntax-check"
 
-  # Test the playbook.
+  # Test the playbook: skip brew erros, install only one ruby version
   # - "travis_wait 30 ansible-playbook provision.yml"
-  - "ansible-playbook provision.yml --extra-vars \"ignore_errors=yes\""
+  - "ansible-playbook provision.yml --extra-vars \"skip_errors=yes ruby_versions=2.5.1\""
 
 
   
