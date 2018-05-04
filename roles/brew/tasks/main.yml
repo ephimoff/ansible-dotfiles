@@ -23,6 +23,15 @@
     state: present
   with_items: "{{ homebrew_cask_apps }}"
   ignore_errors: "{{ skip_errors }}"
+  register: repeat_cask_install
+
+- name: Try to install failed cask applications
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_cask_apps }}"
+  ignore_errors: "{{ skip_errors }}"
+  when: "'Failed' in repeat_cask_install.stderr"
 
 - name: Ensure configured homebrew packages are installed
   homebrew:
