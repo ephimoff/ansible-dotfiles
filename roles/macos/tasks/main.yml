@@ -125,6 +125,14 @@
     value: "{{ system.disable_photos_auto_launch }}"
     state: present
 
+- name: 'system | Show scrollbar only when scrolling'
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleShowScrollBars
+    type: string
+    value: "{{ system.scrollbar_visibility }}"
+    state: present
+
 - name: 'system | Top right screen corner → put display to sleep'
   osx_defaults:
     domain: write com.apple.dock

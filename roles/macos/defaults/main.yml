@@ -18,6 +18,7 @@ system:
   enable_additional_confirmation: false
   show_battery_percent: true
   disable_photos_auto_launch: true
+  scrollbar_visibility: 'WhenScrolling' # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 trackpad:
   enable_tap_to_click: 1 # true
