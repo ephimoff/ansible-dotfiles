@@ -63,7 +63,7 @@
     state: present
   with_items:
     - {key: 'NewWindowTarget', value: "PfHm"}
-    - {key: 'NewWindowTargetPath', value: "{{ textedit.default_home_folder }}"}
+    - {key: 'NewWindowTargetPath', value: "{{ finder.default_home_folder }}"}
 
 - name: 'system | Avoid creating .DS_Store files on network volumes'
   osx_defaults:
