@@ -23,7 +23,8 @@ install:
   - sudo pip install ansible
 
   # Add ansible.cfg to pick up roles path.
-  - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; echo '[privilege_escalation]'; echo 'become_ask_pass=True';} >> ansible.cfg"
+  # - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; echo '[privilege_escalation]'; echo 'become_ask_pass=True';} >> ansible.cfg"
+  - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; } >> ansible.cfg"
 
 script:
   - "ansible --version"
