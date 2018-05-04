@@ -75,3 +75,5 @@ homebrew_cask_apps:
 
 # Directory where applications installed via cask should be installed.
 homebrew_cask_appdir: /Applications
+
+ignore_errors: no
