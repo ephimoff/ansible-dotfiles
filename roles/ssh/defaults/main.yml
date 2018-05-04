@@ -37,6 +37,5 @@ ssh_config_host_configs:
     StrictHostKeyChecking: no
     LogLevel: ERROR
 
-# ssh_config_path: "/etc/ssh/ssh_config"
 ssh_base_dir: "{{general.local_home}}/.ssh"
 ssh_config_path: "{{ssh_base_dir}}/config"

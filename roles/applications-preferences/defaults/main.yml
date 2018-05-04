@@ -31,12 +31,10 @@ vs_code_extensions:
   - lukehoban.Go
   - octref.vetur
 
-# TODO: need to figure out the dependecy
 vs_code_prefs:
   - settings.json
   - keybindings.json
   - projects.json
   - snippets
 
-# TODO: need to figure out the dependecy
 terminal_theme_location: "{{dotfiles_repo_local_destination}}/applications/terminal/Snazzy.terminal"

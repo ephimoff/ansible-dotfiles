@@ -43,16 +43,16 @@
 - ~~node apps~~
 - ~~mas~~
 - ~~maybe restructure code a little bit better: split based on a role~~
+- ~~travis~~
+- ~~proper readme~~
+- ~~review and update extra re-installs, i.e. VS Code extensions~~
+- ~~task for backing up dotfiles~~
 - ~~vim~~
     - vim packages
 - ~~ssh~~
     - to add orion hosts (check the tags or conditions)
-- ~~travis~~
-- ~~proper readme~~
 - symlink scripts folder - optional (`ln -s ~/Projects/scripts ~/.scripts`)
 - add conditions to some tasks (e.g. brew clean only if apps installed)
-- ~~review and update extra re-installs, i.e. VS Code extensions~~
-- ~~task for backing up dotfiles~~
 
 ## Manual steps
 
