@@ -20,5 +20,12 @@
     force: yes
   with_items: "{{ dotfiles_files }}"
 
+- name: Link Scripts folder to home folder
+  file:
+    src: "{{general.local_home}}/Projects/scripts"
+    dest: "{{ general.local_home }}/.scripts"
+    state: link
+    force: yes
+
 
 

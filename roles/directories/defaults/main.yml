@@ -3,6 +3,7 @@
 folders:
   - "{{general.local_home}}/Downloads/.transmission/incomplete"
   - "{{general.local_home}}/Projects/eclipse_workspace"
+  - "{{general.local_home}}/Projects/scripts"
   - "{{general.local_home}}/.dotfiles_backup"
   - "{{general.local_home}}/.config"
   - "{{general.local_home}}/.vim/bundle/"

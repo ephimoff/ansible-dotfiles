@@ -39,6 +39,7 @@
     state: present
   with_items: "{{ homebrew_installed_packages }}"
   ignore_errors: "{{ skip_errors }}"
+  register: package_installed
 
 - name: Upgrade all homebrew packages (if configured)
   homebrew:
@@ -48,3 +49,4 @@
 
 - name: Cleanup brew packages
   command: brew cleanup
+  when: package_installed.changed or repeat_cask_install.changed
