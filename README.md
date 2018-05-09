@@ -20,6 +20,13 @@
     cd ~/Projects/ansible-dotfiles
     ./bootstrap.sh
     ```
+
+    **Note**: The script will install Hombrew and Ansible on your machine. Then will clone [Ansible Compact logger]() to `~/Projects/` folder. You can change that, but don't forget to update `ansible.cfg` and remove the following lines:
+    ```
+    callback_plugins= ~/Projects/ansible_stdout_compact_logger/callbacks
+    stdout_callback = anstomlog
+    ```
+
 1. Run the playbook:
     ```
     ansible-playbook provision.yml
