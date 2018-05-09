@@ -45,18 +45,18 @@
 
 ## TODO
 
-- [x]dotfiles
-- [x]ruby
-- [x]node apps
-- [x]mas
-- [x]maybe restructure code a little bit better: split based on a role
-- [x]travis
-- [x]proper readme
-- [x]review and update extra re-installs, i.e. VS Code extensions
-- [x]task for backing up dotfiles
-- [x]vim
-    - vim packages
-- [x]ssh
+- [x] dotfiles
+- [x] ruby
+- [x] node apps
+- [x] mas
+- [x] maybe restructure code a little bit better: split based on a role
+- [x] travis
+- [x] proper readme
+- [x] review and update extra re-installs, i.e. VS Code extensions
+- [x] task for backing up dotfiles
+- [x] vim
+    - [ ] vim packages
+- [x] ssh
     - [ ] to add orion hosts (check the tags or conditions)
 - [ ] symlink scripts folder - optional (`ln -s ~/Projects/scripts ~/.scripts`)
 - [ ] add conditions to some tasks (e.g. brew clean only if apps installed)
