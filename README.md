@@ -26,17 +26,6 @@
     ansible-playbook provision.yml
     ```
 
-### Options
-
-- To provision only certain tags run:
-    ```
-    ansible-playbook provision.yml --tags "all"
-    ```
-- To skip tags
-    ```
-    ansible-playbook provision.yml --skip-tags "ruby, js"
-    ```
-
 ## TODO
 
 - [x] dotfiles
@@ -63,3 +52,15 @@
 ## Possible issues
 
 During the `brew` role there might be an error related to vagrant Instalation. It's the macOS that is blocking it. Go to macOS preferences -> Security and allow OS to install it. And restart the playbook.
+
+## Useful flags for `ansible-playbook`
+
+See more flags [here](https://docs.ansible.com/ansible/2.4/ansible-playbook.html)
+
+- `--tags "tag-name"` to provision only certain tags
+- `--skip-tags "tag-name1, tag-name2"` to provision without these tags
+- `--list-tasks` list all tasks that would be executed
+- `-T <TIMEOUT>, --timeout <TIMEOUT>` override the connection timeout in seconds (default=10)
+- `-e, --extra-vars` set additional variables as key=value or YAML/JSON, if filename prepend with @
+- `-i, --inventory, --inventory-file` specify inventory host path (default=[[u’/etc/ansible/hosts’]]) or comma separated host list. 
+- `-v, --verbose` verbose mode (-vvv for more, -vvvv to enable connection debugging)
