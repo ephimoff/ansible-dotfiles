@@ -3,7 +3,7 @@
   connection: local
   become: true
   vars_files:
-    - default.config.yml
+    - ../default.config.yml
   roles:
     - {role: ../roles/directories}
     - {role: ../roles/brew}
