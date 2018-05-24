@@ -10,6 +10,7 @@
   homebrew:
     state: latest
     update_homebrew: yes
+  tags: non-travis
 
 - name: Ensure configured taps are tapped
   homebrew_tap:
