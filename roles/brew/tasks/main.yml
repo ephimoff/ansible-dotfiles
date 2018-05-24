@@ -1,10 +1,102 @@
 ---
-- name: Ensure Homebrew directory exists
+- name: Ensure Homebrew parent directory has correct permissions (on High Sierra).
   file:
-    path: "{{ homebrew_install_path }}"
+    path: "{{ homebrew_prefix }}"
+    owner: root
+    state: directory
+  become: yes
+  when: "ansible_distribution_version.startswith('10.13')"
+  tags: travis
+
+- name: Ensure Homebrew parent directory has correct permissions (on non-'High Sierra' versions of Mac OS X).
+  file:
+    path: "{{ homebrew_prefix }}"
+    owner: root
+    group: admin
     state: directory
     mode: 0775
   become: yes
+  when: "not ansible_distribution_version.startswith('10.13')"
+  tags: travis
+
+- name: Ensure Homebrew directory exists
+  file:
+    path: "{{ homebrew_install_path }}"
+    owner: "{{ ansible_user_id }}"
+    group: admin
+    state: directory
+    mode: 0775
+  become: yes
+
+# Clone Homebrew.
+- name: Ensure Homebrew is installed.
+  git:
+    repo: "{{ homebrew_repo }}"
+    version: master
+    dest: "{{ homebrew_install_path }}"
+    update: no
+    accept_hostkey: yes
+    depth: 1
+  tags: travis
+
+# Adjust Homebrew permissions.
+- name: Ensure proper permissions and ownership on homebrew_brew_bin_path dirs.
+  file:
+    path: "{{ homebrew_brew_bin_path }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: admin
+    mode: 0775
+  become: yes
+  tags: travis
+
+- name: Ensure proper ownership on homebrew_install_path subdirs.
+  file:
+    path: "{{ homebrew_install_path }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: admin
+  become: yes
+  tags: travis
+
+# Place brew binary in proper location and complete setup.
+- name: Check if homebrew binary is already in place.
+  stat: "path={{ homebrew_brew_bin_path }}/brew"
+  register: homebrew_binary
+  tags: travis
+
+- name: Symlink brew to homebrew_brew_bin_path.
+  file:
+    src: "{{ homebrew_install_path }}/bin/brew"
+    dest: "{{ homebrew_brew_bin_path }}/brew"
+    state: link
+  when: homebrew_binary.stat.exists == false
+  become: yes
+  tags: travis
+
+- name: Ensure proper homebrew folders are in place.
+  file:
+    path: "{{ homebrew_prefix }}/{{ item }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: admin
+  become: yes
+  with_items:
+    - Cellar
+    - Homebrew
+    - Frameworks
+    - Caskroom
+    - bin
+    - etc
+    - include
+    - lib
+    - opt
+    - sbin
+    - share
+    - share/zsh
+    - share/zsh/site-functions
+    - var
+  tags: travis
 
 - name: Ensure homebrew is updated 
   homebrew:
