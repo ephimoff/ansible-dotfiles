@@ -7,21 +7,27 @@
 1. Install xcode from the app store.
 1. Open xcode and accept the license agreement.
 1. Install xcode command line tools:
+
     ```
     xcode-select --install
     ```
+
 1. Clone this repository by running the following commands:
+
     ```
     mkdir ~/Projects
     git clone https://github.com/ephimoff/ansible-dotfiles.git ~/Projects/ansible-dotfiles
     ```
+
 1. Run the bootstraping script:
+
     ```
     cd ~/Projects/ansible-dotfiles
     ./bootstrap.sh
     ```
-    
+
 1. Run the playbook:
+
     ```
     ansible-playbook provision.yml
     ```
@@ -62,5 +68,5 @@ See more flags [here](https://docs.ansible.com/ansible/2.4/ansible-playbook.html
 - `--list-tasks` list all tasks that would be executed
 - `-T <TIMEOUT>, --timeout <TIMEOUT>` override the connection timeout in seconds (default=10)
 - `-e, --extra-vars` set additional variables as key=value or YAML/JSON, if filename prepend with @
-- `-i, --inventory, --inventory-file` specify inventory host path (default=[[u’/etc/ansible/hosts’]]) or comma separated host list. 
+- `-i, --inventory, --inventory-file` specify inventory host path (default=[[u’/etc/ansible/hosts’]]) or comma separated host list.
 - `-v, --verbose` verbose mode (-vvv for more, -vvvv to enable connection debugging)

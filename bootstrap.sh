@@ -18,6 +18,3 @@ if [ ! "$(which ansible)" ]; then
    brew update
    brew install ansible
 fi
-
-
-# ansible-playbook local.yml -K -i ./inventory/localhost.yml

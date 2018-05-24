@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+  vars_files:
+    - default.config.yml
+  roles:
+    - {role: ../roles/directories}
+    - {role: ../roles/brew}
+    - {role: ../roles/ruby}
+    - {role: ../roles/npm}
+    - {role: ../roles/zsh}
+    - {role: ../roles/dotfiles}
+    - {role: ../roles/applications-preferences}
+    - {role: ../roles/macos}
+    - {role: ../roles/vim}
+    - {role: ../roles/ssh}

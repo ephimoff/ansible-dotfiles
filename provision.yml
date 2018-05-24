@@ -6,12 +6,12 @@
     - default.config.yml
   roles:
     - {role: directories, tags: all}
-    - {role: brew, tags: brew}
-    - {role: ruby, tags: [dev, ruby]}
-    - {role: npm, tags: [dev, js]}
+    - {role: brew, tags: all}
+    - {role: ruby, tags: all}
+    - {role: npm, tags: [all, dev, js]}
     - {role: mas, tags: all}
     - {role: zsh, tags: all}
-    - {role: dotfiles, tags: dot}
+    - {role: dotfiles, tags: all}
     - {role: applications-preferences, tags: all}
     - {role: macos, tags: all}
     - {role: vim, tags: dev}

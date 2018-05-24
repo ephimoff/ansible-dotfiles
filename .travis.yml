@@ -8,42 +8,35 @@ osx_image: xcode9.3
 # Turn off email notifications entirely:
 notifications:
   email: false
-  
-# before_install:
-  # - brew update
-  # - brew outdated ansible || brew upgrade ansible
 
 install:
-  # - brew install ansible
-
   # Install pip
   - sudo easy_install pip
 
   # Install Ansible.
   - sudo pip install ansible
 
-  # Add ansible.cfg to pick up roles path.
-  # - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; } >> ansible.cfg"
-
 script:
   # Check the role/playbook's syntax.
-  - "ansible-playbook -i inventory.ini provision.yml --syntax-check"
+  - ansible-playbook -i tests/inventory.ini tests/test.yml --syntax-check
 
   # Test the playbook: skip brew erros, install only one ruby version
+  - ansible-playbook -i tests/inventory.ini tests/test.yml --extra-vars "@tests/test_vars.json" -vvvv
+
   # - "ansible-playbook provision.yml --extra-vars \"skip_errors=yes ruby_versions=2.5.1 homebrew_cask_apps=[font-fira-code, karabiner-elements, spectacle, visual-studio-code] homebrew_installed_packages=[mas, node, rbenv, vim, yarn, zsh]\""
-  - "ansible-playbook provision.yml --extra-vars '
-      skip_errors: yes
-      ruby_versions: 2.5.1
-      homebrew_cask_apps:
-        - font-fira-code
-        - karabiner-elements
-        - spectacle
-        - visual-studio-code
-      homebrew_installed_packages:
-        - mas
-        - node
-        - rbenv
-        - vim
-        - yarn
-        - zsh
-      '"
+  # - "ansible-playbook -i tests/inventory.ini tests/test.yml --extra-vars '
+  #     skip_errors: yes
+  #     ruby_versions: 2.5.1
+  #     homebrew_cask_apps:
+  #       - font-fira-code
+  #       - karabiner-elements
+  #       - spectacle
+  #       - visual-studio-code
+  #     homebrew_installed_packages:
+  #       - mas
+  #       - node
+  #       - rbenv
+  #       - vim
+  #       - yarn
+  #       - zsh
+  #     '"
