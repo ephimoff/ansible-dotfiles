@@ -23,15 +23,13 @@ install:
   - sudo pip install ansible
 
   # Add ansible.cfg to pick up roles path.
-  # - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; echo '[privilege_escalation]'; echo 'become_ask_pass=True';} >> ansible.cfg"
-  - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; } >> ansible.cfg"
+  # - "{ echo '[defaults]'; echo 'inventory = inventory.ini'; } >> ansible.cfg"
 
 script:
   # Check the role/playbook's syntax.
-  - "ansible-playbook provision.yml --syntax-check"
+  - "ansible-playbook -i inventory.ini provision.yml --syntax-check"
 
   # Test the playbook: skip brew erros, install only one ruby version
-  # - "travis_wait 30 ansible-playbook provision.yml"
   # - "ansible-playbook provision.yml --extra-vars \"skip_errors=yes ruby_versions=2.5.1 homebrew_cask_apps=[font-fira-code, karabiner-elements, spectacle, visual-studio-code] homebrew_installed_packages=[mas, node, rbenv, vim, yarn, zsh]\""
   - "ansible-playbook provision.yml --extra-vars '
       skip_errors: yes
