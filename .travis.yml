@@ -21,7 +21,7 @@ script:
   - ansible-playbook -i tests/inventory.ini tests/test.yml --syntax-check
 
   # Test the playbook: skip brew erros, install only one ruby version
-  - ansible-playbook -i tests/inventory.ini tests/test.yml --extra-vars "@tests/test_vars.json" -vvvv --skip-tags "non-travis"
+  - ansible-playbook -i tests/inventory.ini tests/test.yml -K --extra-vars "@tests/test_vars.json ansible_become_pass=''" -vvvv --skip-tags "non-travis"
 
   # - "ansible-playbook provision.yml --extra-vars \"skip_errors=yes ruby_versions=2.5.1 homebrew_cask_apps=[font-fira-code, karabiner-elements, spectacle, visual-studio-code] homebrew_installed_packages=[mas, node, rbenv, vim, yarn, zsh]\""
   # - "ansible-playbook -i tests/inventory.ini tests/test.yml --extra-vars '

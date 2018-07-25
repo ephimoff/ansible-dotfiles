@@ -65,6 +65,7 @@ homebrew_cask_apps:
   - punto-switcher            # https://yandex.ru/soft/punto/
   - qlstephen                 # Preview plain text files without or with unknown file extension. Example: README, CHANGELOG, index.styl, etc.
   - rescuetime
+  - sequel-pro
   - skype
   - sourcetree
   - spectacle                 # https://www.spectacleapp.com

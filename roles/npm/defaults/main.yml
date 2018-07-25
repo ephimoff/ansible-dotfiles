@@ -3,3 +3,4 @@ node_installed_packages:
   - gulp
   - jshint
   - jslint
+  - nodemon
